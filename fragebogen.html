@@ -287,6 +287,11 @@
                     <span class="question-label">3. Was ist aktuell deine allergrößte Herausforderung im Alltag? (Kurzbeschreibung)</span>
                     <textarea id="diagChallenge" class="form-input form-textarea" rows="4" placeholder="Wo verlierst du derzeit die meiste Zeit, Energie oder Orientierung?"></textarea>
                 </div>
+            <div style="margin-bottom: 1.5rem; background: rgba(197, 160, 89, 0.12); padding: 1.1rem 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-gold);">
+                <label class="radio-label" style="font-weight: 600; color: var(--brand-forest);">
+                    <input type="checkbox" id="sendCopyCheck" checked>
+                    ✉️ Kopie dieser Antworten per E-Mail an mich senden (an deine oben eingegebene E-Mail-Adresse)
+                </label>
             </div>
 
             <button type="submit" class="btn btn-primary btn-lg btn-block shadow-soft">
@@ -294,13 +299,29 @@
             </button>
         </form>
 
-        <div class="form-success-message text-center" id="diagSuccess" style="display: none; padding: 4rem 2rem;">
+        <div class="form-success-message text-center" id="diagSuccess" style="display: none; padding: 3rem 1.5rem;">
             <div class="success-icon">✨</div>
-            <h2>Vielen Dank für deine Antworten!</h2>
-            <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 600px; margin: 1rem auto 2rem;">
-                Deine Antworten wurden direkt an Julia Geneberg übermittelt. Ich schaue mir dein Profil persönlich an und melde mich in Kürze bei dir mit deiner Standort-Analyse!
+            <h2>Vielen Dank für deine Antworten, <span id="successName"></span>!</h2>
+            <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 650px; margin: 1rem auto 1.5rem;">
+                Deine Antworten wurden zusammengestellt. Ein E-Mail-Fenster öffnet sich automatisch an <strong>julia.time.balance@gmail.com</strong> (inkl. Kopie an deine E-Mail-Adresse).
             </p>
-            <a href="index.html" class="btn btn-secondary">Zurück zur Startseite</a>
+
+            <div style="background: #FFF; border: 1px solid var(--border-gold); border-radius: var(--radius-md); padding: 1.5rem; max-width: 750px; margin: 0 auto 2rem; text-align: left; box-shadow: var(--shadow-soft);">
+                <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+                    <h4 style="margin: 0; color: var(--brand-forest);">📋 Deine Antworten in der Übersicht:</h4>
+                    <button onclick="copySummaryText()" class="btn btn-outline" style="padding: 0.4rem 0.85rem; font-size: 0.85rem;" id="copyBtn">
+                        📋 Kopie in Zwischenablage kopieren
+                    </button>
+                </div>
+                <pre id="summaryDisplay" style="white-space: pre-wrap; font-family: monospace; font-size: 0.88rem; background: var(--bg-light); padding: 1.25rem; border-radius: 8px; border: 1px solid #E0DACE; max-height: 350px; overflow-y: auto; color: #222; line-height: 1.5;"></pre>
+            </div>
+
+            <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+                <a href="https://calendar.app.google/Az9xQt5FuJ6fPstb7" target="_blank" rel="noopener" class="btn btn-primary shadow-soft">
+                    📅 Jetzt 30-Minuten Erstgespräch buchen
+                </a>
+                <a href="index.html" class="btn btn-outline">Zurück zur Startseite</a>
+            </div>
         </div>
     </main>
 
@@ -312,25 +333,100 @@
     </footer>
 
     <script>
+        function getRadioVal(name) {
+            const el = document.querySelector(`input[name="${name}"]:checked`);
+            return el ? el.value : 'Nicht angegeben';
+        }
+
+        function copySummaryText() {
+            const text = document.getElementById('summaryDisplay').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.getElementById('copyBtn');
+                btn.innerText = '✅ Kopiert!';
+                setTimeout(() => { btn.innerText = '📋 Kopie in Zwischenablage kopieren'; }, 3000);
+            });
+        }
+
         function handleDiagnoseSubmit(e) {
             e.preventDefault();
-            const name = document.getElementById('diagName').value;
-            const email = document.getElementById('diagEmail').value;
-            const energyLevel = document.getElementById('b1_q6').value;
-            const challenge = document.getElementById('diagChallenge').value;
 
-            // Show success screen
+            const name = document.getElementById('diagName').value.trim();
+            const email = document.getElementById('diagEmail').value.trim();
+
+            document.getElementById('successName').innerText = name;
+
+            // Collect all answers
+            const b1_1 = getRadioVal('b1_q1');
+            const b1_2 = getRadioVal('b1_q2');
+            const b1_3 = getRadioVal('b1_q3');
+            const b1_4 = document.getElementById('b1_q4').value.trim() || 'Nicht angegeben';
+            const b1_5 = getRadioVal('b1_q5');
+            const b1_6 = document.getElementById('b1_q6').value.trim() || 'Nicht angegeben';
+
+            const b2_1 = getRadioVal('b2_q1');
+            const b2_2 = getRadioVal('b2_q2');
+            const b2_3 = getRadioVal('b2_q3');
+            const b2_4 = getRadioVal('b2_q4');
+
+            const b3_1 = getRadioVal('b3_q1');
+            const b3_2 = getRadioVal('b3_q2');
+            const b3_3 = getRadioVal('b3_q3');
+
+            const b4_1 = getRadioVal('b4_q1');
+            const b4_2 = getRadioVal('b4_q2');
+            const challenge = document.getElementById('diagChallenge').value.trim() || 'Nicht angegeben';
+
+            const sendCopyCheck = document.getElementById('sendCopyCheck');
+            const sendCopy = sendCopyCheck ? sendCopyCheck.checked : true;
+
+            const summaryText = `TIME BALANCE DIAGNOSE-FRAGEBOGEN
+=========================================
+Absender/in: ${name}
+E-Mail: ${email}
+Datum: ${new Date().toLocaleDateString('de-DE')}
+
+👤 KONTAKTDATEN
+• Name: ${name}
+• E-Mail: ${email}
+
+⚡ BAUSTEIN 01: ENERGIEMANAGEMENT
+1. Morgens leicht & erholt aufwachen: ${b1_1}
+2. Energie reicht für den gesamten Tag: ${b1_2}
+3. Energie gezielt wiederherstellen: ${b1_3}
+4. Schlafstunden & Qualität: ${b1_4}
+5. Feste arbeitsfreie Wochenend-Tage: ${b1_5}
+6. Aktuelles Energielevel (0-10): ${b1_6} / 10
+
+💡 BAUSTEIN 02: KLARHEIT IM KOPF
+1. Persönliche Grundwerte bekannt: ${b2_1}
+2. Träume & Wünsche leicht formulieren: ${b2_2}
+3. Großes Ziel in TZP-Schritte zerlegen: ${b2_3}
+4. Regelmäßiges Selbstlob & Belohnung: ${b2_4}
+
+📋 BAUSTEIN 03: ORDNUNG IM ALLTAG
+1. Tag & Woche im Voraus planen (GTD): ${b3_1}
+2. Ausreichend Zeit für das Wichtige: ${b3_2}
+3. Arbeitsumfeld organisiert & ordentlich: ${b3_3}
+
+⚖️ BAUSTEIN 04: BALANCE
+1. Aktivitäts-Peaks bekannt & genutzt: ${b4_1}
+2. Zustand der Ruhe & Harmonie: ${b4_2}
+3. Allergrößte Herausforderung im Alltag:
+   "${challenge}"
+=========================================`;
+
+            // Display on success screen
             document.getElementById('diagnoseForm').style.display = 'none';
             document.getElementById('diagSuccess').style.display = 'block';
+            document.getElementById('summaryDisplay').innerText = summaryText;
 
-            // Launch pre-filled email to Julia
-            const mailSubject = encodeURIComponent(`Time Balance Diagnose-Fragebogen von ${name}`);
-            const mailBody = encodeURIComponent(
-                `Hallo Julia,\n\nhier ist mein ausgefüllter Time Balance Diagnose-Fragebogen:\n\nName: ${name}\nE-Mail: ${email}\nEnergielevel (0-10): ${energyLevel}\nGrößte Herausforderung: ${challenge}\n\n(Die weiteren Antworten wurden im Fragebogen übermittelt.)`
-            );
-            
+            // Trigger Mailto with CC (Julia + submitter)
+            const mailSubject = encodeURIComponent(`Time Balance Fragebogen: ${name}`);
+            const ccParam = sendCopy ? `&cc=${encodeURIComponent(email)}` : '';
+            const mailUrl = `mailto:julia.time.balance@gmail.com?subject=${mailSubject}${ccParam}&body=${encodeURIComponent(summaryText)}`;
+
             setTimeout(() => {
-                window.location.href = `mailto:julia.time.balance@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+                window.location.href = mailUrl;
             }, 400);
         }
     </script>
