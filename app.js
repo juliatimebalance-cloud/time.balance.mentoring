@@ -134,9 +134,25 @@ function setupYear() {
     }
 }
 
+// Check URL for ?success=true to show confirmation message
+function checkSuccessURL() {
+    if (window.location.search.includes('success=true')) {
+        const contactForm = document.getElementById('contactForm');
+        const successMsg = document.getElementById('formSuccessMessage');
+        if (contactForm && successMsg) {
+            contactForm.style.display = 'none';
+            successMsg.style.display = 'block';
+            setTimeout(() => {
+                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }, 300);
+        }
+    }
+}
+
 // Initialize
 document.addEventListener('DOMContentLoaded', () => {
     setupOfferSelection();
     setupModals();
     setupYear();
+    checkSuccessURL();
 });

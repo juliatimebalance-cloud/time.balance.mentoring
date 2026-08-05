@@ -351,21 +351,26 @@
                         <p>Sende Julia Geneberg direkt eine Nachricht. Ich melde mich innerhalb von 24 Stunden persönlich bei dir.</p>
                     </div>
 
-                    <form class="contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+                    <form class="contact-form" id="contactForm" action="https://api.web3forms.com/submit" method="POST">
+                        <input type="hidden" name="access_key" value="28f46f2c-7856-4ea6-a1ff-81896bbd7e42">
+                        <input type="hidden" name="from_name" value="Time Balance Website">
+                        <input type="hidden" name="subject" value="Neue Kontaktanfrage über die Website">
+                        <input type="hidden" name="redirect" value="https://juliageneberg.github.io/Allgemein/index.html?success=true#kontakt">
+
                         <div class="form-row grid grid-2">
                             <div class="form-group">
                                 <label for="contactName">Dein Name *</label>
-                                <input type="text" id="contactName" class="form-input" placeholder="z.B. Maria Muster" required>
+                                <input type="text" id="contactName" name="name" class="form-input" placeholder="z.B. Maria Muster" required>
                             </div>
                             <div class="form-group">
                                 <label for="contactEmail">Deine E-Mail-Adresse *</label>
-                                <input type="email" id="contactEmail" class="form-input" placeholder="z.B. maria@beispiel.de" required>
+                                <input type="email" id="contactEmail" name="email" class="form-input" placeholder="z.B. maria@beispiel.de" required>
                             </div>
                         </div>
 
                         <div class="form-group">
                             <label for="contactOffer">Gewünschtes Format *</label>
-                            <select id="contactOffer" class="form-input form-select" required>
+                            <select id="contactOffer" name="Gewuenschtes_Format" class="form-input form-select" required>
                                 <option value="Kostenloses 30-Minuten Kennenlerngespräch">Kostenloses 30-Minuten Kennenlerngespräch (0 €)</option>
                                 <option value="1:1 Intensiv-Beratung (1 Std.)">1:1 Intensiv-Beratung (1 Std.)</option>
                                 <option value="12-Wochen Time Balance Programm">12-Wochen Time Balance Programm (Mentoring)</option>
@@ -375,7 +380,7 @@
 
                         <div class="form-group">
                             <label for="contactMessage">Deine Nachricht / Deine aktuelle Herausforderung *</label>
-                            <textarea id="contactMessage" class="form-input form-textarea" rows="5" placeholder="Beschreibe kurz deine aktuelle Situation: Wo verlierst du derzeit die meiste Zeit oder Energie?" required></textarea>
+                            <textarea id="contactMessage" name="nachricht" class="form-input form-textarea" rows="5" placeholder="Beschreibe kurz deine aktuelle Situation: Wo verlierst du derzeit die meiste Zeit oder Energie?" required></textarea>
                         </div>
 
                         <!-- Direct Receiver Config Option -->

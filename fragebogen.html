@@ -120,7 +120,11 @@
     </header>
 
     <main class="container" style="max-width: 900px; padding-bottom: 6rem;">
-        <form id="diagnoseForm" onsubmit="handleDiagnoseSubmit(event)">
+        <form id="diagnoseForm" action="https://api.web3forms.com/submit" method="POST">
+            <input type="hidden" name="access_key" value="28f46f2c-7856-4ea6-a1ff-81896bbd7e42">
+            <input type="hidden" name="from_name" value="Time Balance Mentoring">
+            <input type="hidden" name="subject" value="📋 Neuer Time Balance Diagnose-Fragebogen">
+            <input type="hidden" name="redirect" value="https://juliageneberg.github.io/Allgemein/fragebogen.html?success=true">
 
             <!-- Kontaktdaten -->
             <div class="form-section-card">
@@ -128,11 +132,11 @@
                 <div class="grid grid-2" style="margin-top: 1.5rem;">
                     <div class="form-group">
                         <label for="diagName">Dein Vor- und Nachname *</label>
-                        <input type="text" id="diagName" class="form-input" placeholder="z. B. Maria Muster" required>
+                        <input type="text" id="diagName" name="Name" class="form-input" placeholder="z. B. Maria Muster" required>
                     </div>
                     <div class="form-group">
                         <label for="diagEmail">Deine E-Mail-Adresse *</label>
-                        <input type="email" id="diagEmail" class="form-input" placeholder="z. B. maria@beispiel.de" required>
+                        <input type="email" id="diagEmail" name="Email" class="form-input" placeholder="z. B. maria@beispiel.de" required>
                     </div>
                 </div>
             </div>
@@ -171,7 +175,7 @@
 
                 <div class="question-group">
                     <span class="question-label">4. Wie viele Stunden schläfst du durchschnittlich & ist der Schlaf erholsam?</span>
-                    <input type="text" id="b1_q4" class="form-input" placeholder="z. B. 7 Stunden, schlafe aber unruhig">
+                    <input type="text" id="b1_q4" name="Schlaf_Qualitaet" class="form-input" placeholder="z. B. 7 Stunden, schlafe aber unruhig">
                 </div>
 
                 <div class="question-group">
@@ -185,7 +189,7 @@
 
                 <div class="question-group">
                     <span class="question-label">6. Bewerte dein aktuelles Energielevel auf einer Skala von 0 bis 10 (0 = völlig erschöpft, 10 = voller Kraft):</span>
-                    <input type="number" id="b1_q6" class="form-input" min="0" max="10" placeholder="0 - 10" required>
+                    <input type="number" id="b1_q6" name="Energielevel_0_10" class="form-input" min="0" max="10" placeholder="0 - 10" required>
                 </div>
             </div>
 
@@ -285,7 +289,7 @@
 
                 <div class="question-group">
                     <span class="question-label">3. Was ist aktuell deine allergrößte Herausforderung im Alltag? (Kurzbeschreibung)</span>
-                    <textarea id="diagChallenge" class="form-input form-textarea" rows="4" placeholder="Wo verlierst du derzeit die meiste Zeit, Energie oder Orientierung?"></textarea>
+                    <textarea id="diagChallenge" name="Groesste_Herausforderung" class="form-input form-textarea" rows="4" placeholder="Wo verlierst du derzeit die meiste Zeit, Energie oder Orientierung?"></textarea>
                 </div>
             <div style="margin-bottom: 1.5rem; background: rgba(197, 160, 89, 0.12); padding: 1.1rem 1.25rem; border-radius: var(--radius-md); border: 1px solid var(--border-gold);">
                 <label class="radio-label" style="font-weight: 600; color: var(--brand-forest);">
@@ -338,6 +342,18 @@
     </footer>
 
     <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            if (window.location.search.includes('success=true')) {
+                const form = document.getElementById('diagnoseForm');
+                const successEl = document.getElementById('diagSuccess');
+                if (form && successEl) {
+                    form.style.display = 'none';
+                    successEl.style.display = 'block';
+                    successEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            }
+        });
+
         function getRadioVal(name) {
             const el = document.querySelector(`input[name="${name}"]:checked`);
             return el ? el.value : 'Nicht angegeben';
