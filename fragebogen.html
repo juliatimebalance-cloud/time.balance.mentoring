@@ -301,9 +301,14 @@
 
         <div class="form-success-message text-center" id="diagSuccess" style="display: none; padding: 3rem 1.5rem;">
             <div class="success-icon">✨</div>
-            <h2>Vielen Dank für deine Antworten, <span id="successName"></span>!</h2>
-            <p style="font-size: 1.1rem; color: var(--text-secondary); max-width: 650px; margin: 1rem auto 1.5rem;">
-                Deine Antworten wurden zusammengestellt. Ein E-Mail-Fenster öffnet sich automatisch an <strong>julia.time.balance@gmail.com</strong> (inkl. Kopie an deine E-Mail-Adresse).
+            <h2 style="color: var(--brand-forest); font-size: 2.2rem; margin-bottom: 0.75rem;">
+                Vielen Dank, dass du dir die Zeit genommen hast, <span id="successName"></span>!
+            </h2>
+            <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 680px; margin: 0 auto 1.5rem; line-height: 1.6;">
+                Du hast den ersten wichtigen Schritt für deine innere Ruhe & Klarheit gemacht. Ich schaue mir deine Antworten persönlich an und freue mich sehr auf unser Gespräch!
+            </p>
+            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">
+                Ein E-Mail-Fenster öffnet sich automatisch an <strong>julia.time.balance@gmail.com</strong> (inkl. Kopie an deine E-Mail-Adresse).
             </p>
 
             <div style="background: #FFF; border: 1px solid var(--border-gold); border-radius: var(--radius-md); padding: 1.5rem; max-width: 750px; margin: 0 auto 2rem; text-align: left; box-shadow: var(--shadow-soft);">
@@ -417,8 +422,12 @@ Datum: ${new Date().toLocaleDateString('de-DE')}
 
             // Display on success screen
             document.getElementById('diagnoseForm').style.display = 'none';
-            document.getElementById('diagSuccess').style.display = 'block';
+            const successEl = document.getElementById('diagSuccess');
+            successEl.style.display = 'block';
             document.getElementById('summaryDisplay').innerText = summaryText;
+
+            // Scroll smoothly to top of success message
+            successEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
             // Trigger Mailto with CC (Julia + submitter)
             const mailSubject = encodeURIComponent(`Time Balance Fragebogen: ${name}`);
