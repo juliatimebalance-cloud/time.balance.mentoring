@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Balance Diagnose-Fragebogen | Julia Geneberg</title>
+    <meta name="description" content="Standortbestimmung & Analyse deines aktuellen Status (Punkt A) nach dem Time Balance System von Julia Geneberg.">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .form-page-header {
+            padding: 9rem 0 3rem;
+            text-align: center;
+        }
+        .form-section-card {
+            background: #FFF;
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-soft);
+        }
+        .form-section-card h3 {
+            font-size: 1.6rem;
+            color: var(--brand-forest);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .question-group {
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(42, 72, 54, 0.06);
+        }
+        .question-group:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .question-label {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1.05rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        .radio-options {
+            display: flex;
+            gap: 1.5rem;
+            flex-wrap: wrap;
+        }
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+        }
+        .radio-label input {
+            accent-color: var(--brand-forest);
+            width: 18px;
+            height: 18px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Subtle Background Glows -->
+    <div class="bg-glow glow-light-1"></div>
+    <div class="bg-glow glow-light-2"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon-wrapper">
+                    <svg class="logo-clock-svg" viewBox="0 0 100 100" width="38" height="38">
+                        <circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="3" opacity="0.2"/>
+                        <circle cx="50" cy="50" r="44" fill="none" stroke="url(#goldGradient)" stroke-width="3" stroke-dasharray="276" stroke-dashoffset="60"/>
+                        <line x1="50" y1="50" x2="50" y2="24" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+                        <line x1="50" y1="50" x2="68" y2="50" stroke="url(#goldGradient)" stroke-width="3.5" stroke-linecap="round"/>
+                        <circle cx="50" cy="50" r="5" fill="currentColor"/>
+                        <circle cx="50" cy="12" r="3" fill="#D4AF37"/>
+                        <circle cx="88" cy="50" r="3" fill="#2A4836"/>
+                        <defs>
+                            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#D4AF37"/>
+                                <stop offset="100%" stop-color="#B8860B"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="logo-text-group">
+                    <span class="logo-title">Time <span class="accent-gold">Balance</span></span>
+                    <span class="logo-subtitle">by Julia Geneberg</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html">Zurück zur Hauptseite</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="form-page-header">
+        <div class="container">
+            <span class="section-tag">Analyse & Standortbestimmung (Punkt A)</span>
+            <h1 class="hero-title">Time Balance Diagnose-Fragebogen</h1>
+            <p class="hero-subtitle" style="max-width: 750px; margin: 0 auto;">
+                Bitte beantworte die folgenden Fragen ehrlich. Diese Auswertung hilft uns im 1:1 Mentoring, deine größten Potenziale zu identifizieren und deinen individuellen Weg zu gestalten.
+            </p>
+        </div>
+    </header>
+
+    <main class="container" style="max-width: 900px; padding-bottom: 6rem;">
+        <form id="diagnoseForm" onsubmit="handleDiagnoseSubmit(event)">
+
+            <!-- Kontaktdaten -->
+            <div class="form-section-card">
+                <h3><span>👤</span> Deine Kontaktdaten</h3>
+                <div class="grid grid-2" style="margin-top: 1.5rem;">
+                    <div class="form-group">
+                        <label for="diagName">Dein Vor- und Nachname *</label>
+                        <input type="text" id="diagName" class="form-input" placeholder="z. B. Maria Muster" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="diagEmail">Deine E-Mail-Adresse *</label>
+                        <input type="email" id="diagEmail" class="form-input" placeholder="z. B. maria@beispiel.de" required>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Baustein 1 -->
+            <div class="form-section-card">
+                <h3><span>⚡</span> Baustein 01: Energiemanagement</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Analyse deiner physischen & mentalen Ressourcen.</p>
+
+                <div class="question-group">
+                    <span class="question-label">1. Wachst du morgens gewöhnlich leicht und erholt auf?</span>
+                    <div class="radio-options">
+                        <label class="radio-label"><input type="radio" name="b1_q1" value="Ja" required> Ja</label>
+                        <label class="radio-label"><input type="radio" name="b1_q1" value="Teilweise"> Teilweise</label>
+                        <label class="radio-label"><input type="radio" name="b1_q1" value="Nein"> Nein</label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <span class="question-label">2. Reicht deine Energie für den gesamten Tag aus?</span>
+                    <div class="radio-options">
+                        <label class="radio-label"><input type="radio" name="b1_q2" value="Ja" required> Ja</label>
+                        <label class="radio-label"><input type="radio" name="b1_q2" value="Oft Nachmittagstief"> Oft Nachmittagstief</label>
+                        <label class="radio-label"><input type="radio" name="b1_q2" value="Nein, oft erschöpft"> Nein, oft erschöpft</label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <span class="question-label">3. Weißt du, wie du deine Energie im Laufe des Tages gezielt wiederherstellst?</span>
+                    <div class="radio-options">
+                        <label class="radio-label"><input type="radio" name="b1_q3" value="Ja" required> Ja</label>
+                        <label class="radio-label"><input type="radio" name="b1_q3" value="Unsicher"> Unsicher</label>
+                        <label class="radio-label"><input type="radio" name="b1_q3" value="Nein"> Nein</label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <span class="question-label">4. Wie viele Stunden schläfst du durchschnittlich & ist der Schlaf erholsam?</span>
+                    <input type="text" id="b1_q4" class="form-input" placeholder="z. B. 7 Stunden, schlafe aber unruhig">
+                </div>
+
+                <div class="question-group">
+                    <span class="question-label">5. Hast du feste Wochenend-Tage, an denen du überhaupt nicht arbeitest?</span>
+                    <div class="radio-options">
+                        <label class="radio-label"><input type="radio" name="b1_q5" value="Ja, regelmäßig" required> Ja, regelmäßig</label>
+                        <label class="radio-label"><input type="radio" name="b1_q5" value="Selten"> Selten</label>
+                        <label class="radio-label"><input type="radio" name="b1_q5" value="Nein, arbeite durch"> Nein, arbeite durch</label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <span class="question-label">6. Bewerte dein aktuelles Energielevel auf einer Skala von 0 bis 10 (0 = völlig erschöpft, 10 = voller Kraft):</span>
+                    <input type="number" id="b1_q6" class="form-input" min="0" max="10" placeholder="0 - 10" required>
+                </div>
+            </div>
+
+            <!-- Baustein 2 -->
+            <div class="form-section-card">
+                <h3><span>💡</span> Baustein 02: Klarheit im Kopf</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Wertesystem, Ausrichtung & Traum-Ziel-Plan (TZP).</p>
+
+                <div class="question-group">
+                    <span class="question-label">1. Kennst du deine persönlichen Grundwerte und weißt, was dich wirklich erfüllt?</span>
+                    <div class="radio-options">
+                        <label class="radio-label"><input type="radio" name="b2_q1" value="Ja, genau" required> Ja, genau</label>
+                        <label class="radio-label"><input type="radio" name="b2_q1" value="Teilweise"> Teilweise</label>
+                        <label class="radio-label"><input type="radio" name="b2_q1" value="Nein"> Nein</label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <span class="question-label">2. Fällt es dir leicht, Wünsche und Träume zu formulieren?</span>
+                    <div class="radio-options">
+                        <label class="radio-label"><input type="radio" name="b2_q2" value="Ja" required> Ja</label>
+                        <label class="radio-label"><input type="radio" name="b2_q2" value="Schwer"> Schwer</label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <span class="question-label">3. Kannst du ein großes Ziel in konkrete, machbare Schritte herunterbrechen (TZP-Kette)?</span>
+                    <div class="radio-options">
+                        <label class="radio-label"><input type="radio" name="b2_q3" value="Ja" required> Ja</label>
+                        <label class="radio-label"><input type="radio" name="b2_q3" value="Manchmal"> Manchmal</label>
+                        <label class="radio-label"><input type="radio" name="b2_q3" value="Nein, verzettele mich"> Nein, verzettele mich</label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <span class="question-label">4. Lobst und belohnst du dich regelmäßig selbst für erreichte Erfolge?</span>
+                    <div class="radio-options">
+                        <label class="radio-label"><input type="radio" name="b2_q4" value="Ja, regelmäßig" required> Ja, regelmäßig</label>
+                        <label class="radio-label"><input type="radio" name="b2_q4" value="Selten / Vergesse es"> Selten / Vergesse es</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Baustein 3 -->
+            <div class="form-section-card">
+                <h3><span>📋</span> Baustein 03: Ordnung im Alltag</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Planungssysteme (GTD), Routinen & Zeitfresser.</p>
+
+                <div class="question-group">
+                    <span class="question-label">1. Planst du deinen Tag und deine Woche im Voraus (z. B. mit GTD oder Apps)?</span>
+                    <div class="radio-options">
+                        <label class="radio-label"><input type="radio" name="b3_q1" value="Ja, strukturiert" required> Ja, strukturiert</label>
+                        <label class="radio-label"><input type="radio" name="b3_q1" value="Unregelmäßig"> Unregelmäßig</label>
+                        <label class="radio-label"><input type="radio" name="b3_q1" value="Nein, nach Zurufe"> Nein, nach Zurufe</label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <span class="question-label">2. Reicht dir deine verfügbare Zeit im Alltag für alles, was dir wirklich wichtig ist?</span>
+                    <div class="radio-options">
+                        <label class="radio-label"><input type="radio" name="b3_q2" value="Ja" required> Ja</label>
+                        <label class="radio-label"><input type="radio" name="b3_q2" value="Nein, ständiger Zeitmangel"> Nein, ständiger Zeitmangel</label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <span class="question-label">3. Ist dein physisches und digitales Arbeitsumfeld so organisiert, dass du mühelos Ordnung hältst?</span>
+                    <div class="radio-options">
+                        <label class="radio-label"><input type="radio" name="b3_q3" value="Ja" required> Ja</label>
+                        <label class="radio-label"><input type="radio" name="b3_q3" value="Ausbaufähig"> Ausbaufähig</label>
+                        <label class="radio-label"><input type="radio" name="b3_q3" value="Nein, Chaos"> Nein, Chaos</label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Baustein 4 -->
+            <div class="form-section-card">
+                <h3><span>⚖️</span> Baustein 04: Balance</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">Lebensrad, Aktivitäts-Peaks & Lebensfreude.</p>
+
+                <div class="question-group">
+                    <span class="question-label">1. Kennst du deine persönlichen Aktivitäts-Peaks am Tag und richtest deinen Plan danach aus?</span>
+                    <div class="radio-options">
+                        <label class="radio-label"><input type="radio" name="b4_q1" value="Ja" required> Ja</label>
+                        <label class="radio-label"><input type="radio" name="b4_q1" value="Nein"> Nein</label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <span class="question-label">2. Wie häufig befindest du dich aktuell in einem Zustand der Ruhe, Ausgeglichenheit und Harmonie?</span>
+                    <div class="radio-options">
+                        <label class="radio-label"><input type="radio" name="b4_q2" value="Fast täglich" required> Fast täglich</label>
+                        <label class="radio-label"><input type="radio" name="b4_q2" value="Gelegentlich"> Gelegentlich</label>
+                        <label class="radio-label"><input type="radio" name="b4_q2" value="Selten bis nie"> Selten bis nie</label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <span class="question-label">3. Was ist aktuell deine allergrößte Herausforderung im Alltag? (Kurzbeschreibung)</span>
+                    <textarea id="diagChallenge" class="form-input form-textarea" rows="4" placeholder="Wo verlierst du derzeit die meiste Zeit, Energie oder Orientierung?"></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="btn btn-primary btn-lg btn-block shadow-soft">
+                Diagnose-Fragebogen absenden
+            </button>
+        </form>
+
+        <div class="form-success-message text-center" id="diagSuccess" style="display: none; padding: 4rem 2rem;">
+            <div class="success-icon">✨</div>
+            <h2>Vielen Dank für deine Antworten!</h2>
+            <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 600px; margin: 1rem auto 2rem;">
+                Deine Antworten wurden direkt an Julia Geneberg übermittelt. Ich schaue mir dein Profil persönlich an und melde mich in Kürze bei dir mit deiner Standort-Analyse!
+            </p>
+            <a href="index.html" class="btn btn-secondary">Zurück zur Startseite</a>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container text-center" style="color: var(--text-muted); font-size: 0.9rem;">
+            <p>&copy; Time Balance Mentoring by Julia Geneberg. Alle Rechte vorbehalten. | julia.time.balance@gmail.com</p>
+        </div>
+    </footer>
+
+    <script>
+        function handleDiagnoseSubmit(e) {
+            e.preventDefault();
+            const name = document.getElementById('diagName').value;
+            const email = document.getElementById('diagEmail').value;
+            const energyLevel = document.getElementById('b1_q6').value;
+            const challenge = document.getElementById('diagChallenge').value;
+
+            // Show success screen
+            document.getElementById('diagnoseForm').style.display = 'none';
+            document.getElementById('diagSuccess').style.display = 'block';
+
+            // Launch pre-filled email to Julia
+            const mailSubject = encodeURIComponent(`Time Balance Diagnose-Fragebogen von ${name}`);
+            const mailBody = encodeURIComponent(
+                `Hallo Julia,\n\nhier ist mein ausgefüllter Time Balance Diagnose-Fragebogen:\n\nName: ${name}\nE-Mail: ${email}\nEnergielevel (0-10): ${energyLevel}\nGrößte Herausforderung: ${challenge}\n\n(Die weiteren Antworten wurden im Fragebogen übermittelt.)`
+            );
+            
+            setTimeout(() => {
+                window.location.href = `mailto:julia.time.balance@gmail.com?subject=${mailSubject}&body=${mailBody}`;
+            }, 400);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time Balance | Julia Geneberg – Mit Ruhe, Fokus & Leichtigkeit zum Erfolg</title>
+    <meta name="description" content="Time Balance Mentoring & Begleitung von Julia Geneberg. Gewinne deine Energie zurück, schaffe Ordnung im Alltag und erreiche deine Ziele ohne Burnout.">
+    <meta name="keywords" content="Time Balance, Julia Geneberg, Zeitmanagement Mentoring, Energiemanagement, Klarheit im Kopf, Ordnung im Alltag, Work-Life-Balance, Begleitung">
+    
+    <!-- Open Graph / Social Media -->
+    <meta property="og:title" content="Time Balance | Julia Geneberg">
+    <meta property="og:description" content="Mit Ruhe, Fokus und Leichtigkeit zu deinen größten Erfolgen. Entdecke das 12-Wochen-Programm & die 1:1 Beratung.">
+    <meta property="og:type" content="website">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&family=Outfit:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <!-- Subtle Organic Background Glows -->
+    <div class="bg-glow glow-light-1"></div>
+    <div class="bg-glow glow-light-2"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="#" class="logo">
+                <div class="logo-icon-wrapper">
+                    <!-- Custom Time Balance Clock Logo Icon -->
+                    <svg class="logo-clock-svg" viewBox="0 0 100 100" width="38" height="38">
+                        <circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="3" opacity="0.2"/>
+                        <circle cx="50" cy="50" r="44" fill="none" stroke="url(#goldGradient)" stroke-width="3" stroke-dasharray="276" stroke-dashoffset="60"/>
+                        <!-- Clock Hands -->
+                        <line x1="50" y1="50" x2="50" y2="24" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+                        <line x1="50" y1="50" x2="68" y2="50" stroke="url(#goldGradient)" stroke-width="3.5" stroke-linecap="round"/>
+                        <!-- Center Balance Sphere -->
+                        <circle cx="50" cy="50" r="5" fill="currentColor"/>
+                        <!-- Gentle orbit dots -->
+                        <circle cx="50" cy="12" r="3" fill="#D4AF37"/>
+                        <circle cx="88" cy="50" r="3" fill="#2A4836"/>
+                        <defs>
+                            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#D4AF37"/>
+                                <stop offset="100%" stop-color="#B8860B"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="logo-text-group">
+                    <span class="logo-title">Time <span class="accent-gold">Balance</span></span>
+                    <span class="logo-subtitle">by Julia Geneberg</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="#philosophie">Philosophie</a>
+                <a href="#bausteine">4 Bausteine</a>
+                <a href="#angebote">Angebote</a>
+                <a href="#kontakt" class="btn btn-nav btn-primary">Anfrage senden</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero">
+        <div class="container hero-container">
+            <div class="hero-badge">
+                <span class="pulse-dot"></span> Mentoring & Begleitung für Frauen & Macherinnen
+            </div>
+            <h1 class="hero-title">
+                Mit Ruhe, Fokus und Leichtigkeit <br>
+                <span class="gradient-text">zu deinen größten Erfolgen.</span>
+            </h1>
+            <p class="hero-subtitle">
+                Das bewährte <strong>Time Balance System</strong> von Julia Geneberg. Raus aus dem reaktiven Stress-Hamsterrad – hinein in eine glasklare Struktur, volle Lebensenergie und innere Harmonie.
+            </p>
+            <div class="hero-actions">
+                <a href="#angebote" class="btn btn-primary btn-lg shadow-soft">
+                    <span>Angebote entdecken</span>
+                    <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+                </a>
+                <a href="#kontakt" class="btn btn-outline btn-lg">Erstgespräch vereinbaren</a>
+            </div>
+            
+            <!-- Key Pillars Overview -->
+            <div class="hero-pillars-preview">
+                <div class="pillar-pill">⚡ Energiemanagement</div>
+                <div class="pillar-pill">💡 Klarheit im Kopf</div>
+                <div class="pillar-pill">🌿 Ordnung im Alltag</div>
+                <div class="pillar-pill">⚖️ Balance</div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Core Philosophy Section -->
+        <section class="section philosophy-section" id="philosophie">
+            <div class="container">
+                <div class="grid grid-2 align-center">
+                    <div class="philosophy-text">
+                        <span class="section-tag">Zwei Wege des Alltags</span>
+                        <h2>Wie gehst du bisher mit deiner Zeit um?</h2>
+                        <p class="lead-text">Es gibt zwei gewohnte Strategien, um mit der täglichen Flut an Aufgaben umzugehen:</p>
+                        
+                        <div class="strategy-comparison">
+                            <div class="strategy-box strategy-bad">
+                                <h4>1. Alles auf sich beruhen lassen</h4>
+                                <p>Es spart kurzfristig Energie, aber Ergebnisse und Erfolge bleiben aus. Frust baut sich auf.</p>
+                            </div>
+                            <div class="strategy-box strategy-bad">
+                                <h4>2. Maximaler Kontrollzwang</h4>
+                                <p>Du ziehst alles auf eigenen Schultern durch. Ergebnisse entstehen, aber die Freude am Leben geht verloren.</p>
+                            </div>
+                        </div>
+
+                        <div class="strategy-box strategy-good">
+                            <h4>✨ Der Mittelweg: Die Time Balance Methode</h4>
+                            <p>Wir vereinen Ambitionen mit echter Lebensfreude. Verwirklich deine Träume – entspannt, strukturiert und ohne Burnout.</p>
+                        </div>
+                    </div>
+
+                    <div class="philosophy-card-wrapper">
+                        <div class="glass-card main-quote-card text-center">
+                            <div class="quote-icon">“</div>
+                            <blockquote class="quote-text">
+                                Einmal rechtzeitig machen ist besser als siebenmal perfekt.
+                            </blockquote>
+                            <cite class="quote-author">— Julia Geneberg</cite>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- The 4 Modules / Bausteine Section -->
+        <section class="section modules-section" id="bausteine">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Das 12-Wochen System</span>
+                    <h2>Die 4 Bausteine deiner Transformation</h2>
+                    <p>Vier Schlüssel für ein ausgewogenes und erfolgreiches Leben ohne Überforderung.</p>
+                </div>
+
+                <div class="grid modules-grid">
+                    <!-- Modul 1 -->
+                    <div class="glass-card module-card">
+                        <div class="module-number">Baustein 01</div>
+                        <div class="module-header">
+                            <div class="module-icon">⚡</div>
+                            <h3>Energiemanagement</h3>
+                        </div>
+                        <p class="module-desc">Fülle deine Ressourcen-Depots auf. Lerne schonenden Umgang mit deiner Energie und schließe unsichtbare Energieschlupflöcher im Alltag.</p>
+                        <ul class="module-topics">
+                            <li>Neue Norm des Ressourcen-Zustands</li>
+                            <li>Schonender Umgang mit Reizen & Reizüberflutung</li>
+                            <li>Körperliche & mentale Regeneration</li>
+                        </ul>
+                    </div>
+
+                    <!-- Modul 2 -->
+                    <div class="glass-card module-card">
+                        <div class="module-number">Baustein 02</div>
+                        <div class="module-header">
+                            <div class="module-icon">💡</div>
+                            <h3>Klarheit im Kopf</h3>
+                        </div>
+                        <p class="module-desc">Forme einen starken, stabilen inneren Kern. Befreie dich vom inneren Kritiker und richte deine Ziele an deinen echten Werten aus.</p>
+                        <ul class="module-topics">
+                            <li>Wertesystem-Audit (Grund- & Zusatzwerte)</li>
+                            <li>Aktivierung deiner inneren Anteile</li>
+                            <li>Das „Traum – Ziel – Plan“ System (TZP)</li>
+                        </ul>
+                    </div>
+
+                    <!-- Modul 3 -->
+                    <div class="glass-card module-card">
+                        <div class="module-number">Baustein 03</div>
+                        <div class="module-header">
+                            <div class="module-icon">📋</div>
+                            <h3>Ordnung im Alltag</h3>
+                        </div>
+                        <p class="module-desc">Schaffe ein flexibles Planungssystem, das dir hilft, alle Aufgaben stressfrei und mit Leichtigkeit zu bewältigen.</p>
+                        <ul class="module-topics">
+                            <li>Flexibles GTD-Planungssystem (Getting Things Done)</li>
+                            <li>Entrümpelung & Raumorganisation</li>
+                            <li>Optimierung von Haushalts- & Routineaufgaben</li>
+                        </ul>
+                    </div>
+
+                    <!-- Modul 4 -->
+                    <div class="glass-card module-card">
+                        <div class="module-number">Baustein 04</div>
+                        <div class="module-header">
+                            <div class="module-icon">⚖️</div>
+                            <h3>Balance & Lebensfreude</h3>
+                        </div>
+                        <p class="module-desc">Lebe im Flow. Erstelle deine persönliche Balance-Formel und bringe wieder Sinnlichkeit, Genuss und Lebendigkeit in deinen Tag.</p>
+                        <ul class="module-topics">
+                            <li>Analyse deines persönlichen Lebensrads</li>
+                            <li>Planung nach deinen Aktivitäts-Peaks</li>
+                            <li>Alltagsfreude & Jahresfestkalender</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Offers / Program Pricing Section -->
+        <section class="section offers-section" id="angebote">
+            <div class="container">
+                <div class="section-header text-center">
+                    <span class="section-tag">Zusammenarbeit</span>
+                    <h2>Wähle dein passendes Format</h2>
+                    <p>Egal ob du schnelle Klarheit brauchst oder eine tiefgreifende 12-Wochen-Transformation suchst.</p>
+                </div>
+
+                <div class="grid grid-2 offers-grid">
+                    <!-- Offer 1: 1:1 Beratung -->
+                    <div class="glass-card offer-card">
+                        <div class="offer-badge">Schnelle Hilfe</div>
+                        <h3>1:1 Intensiv-Beratung</h3>
+                        <div class="offer-duration">1 Stunde Einzel-Mentoring</div>
+                        <p class="offer-intro">Perfekt für akute Zeitfresser, drängende Entscheidungen oder eine schnelle Standortbestimmung deines Alltags.</p>
+                        <ul class="offer-features">
+                            <li>✓ 60 Minuten intensives 1-zu-1 Video-Gespräch</li>
+                            <li>✓ Analyse deines aktuellen Punkt A (Ist-Zustand)</li>
+                            <li>✓ Aufdeckung deiner größten Zeit- & Energieräuber</li>
+                            <li>✓ Konkreter Handlungsplan für sofortige Entlastung</li>
+                        </ul>
+                        <button class="btn btn-outline btn-block select-offer-btn" data-offer="1:1 Intensiv-Beratung (1 Std.)">
+                            Beratung anfragen
+                        </button>
+                    </div>
+
+                    <!-- Offer 2: 12-Wochen Programm -->
+                    <div class="glass-card offer-card offer-featured">
+                        <div class="offer-badge badge-featured">Empfohlen</div>
+                        <h3>12-Wochen Time Balance Programm</h3>
+                        <div class="offer-duration">Ganzheitliches Mentoring-System</div>
+                        <p class="offer-intro">Das vollständige 4-Bausteine-Programm von Julia Geneberg für nachhaltige Transformation, innere Ruhe und bleibenden Erfolg.</p>
+                        <ul class="offer-features">
+                            <li>✓ 12x 1 Stunde intensive Live-Beratung (wöchentliches 1:1 Online-Treffen)</li>
+                            <li>✓ Intensives Erarbeiten aller 4 Bausteine & direkte Anwendung im Alltag</li>
+                            <li>✓ Inklusive digitalem Workbook „Time Balance“</li>
+                            <li>✓ Praktische Aufgaben im digitalen Workbook (GTD, Raumordnung & Wochenroutinen)</li>
+                            <li>✓ Erstellung deiner individuellen Balance-Formel</li>
+                        </ul>
+                        <button class="btn btn-primary btn-block shadow-soft select-offer-btn" data-offer="12-Wochen Time Balance Programm">
+                            Für das Programm bewerben
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Direct Contact Form Section -->
+        <section class="section contact-section" id="kontakt">
+            <div class="container">
+                <div class="contact-wrapper glass-card">
+                    <div class="contact-header text-center">
+                        <span class="section-tag">Kontakt & Anfrage</span>
+                        <h2>Starte deine Reise zu mehr Time Balance</h2>
+                        <p>Sende Julia Geneberg direkt eine Nachricht. Ich melde mich innerhalb von 24 Stunden persönlich bei dir.</p>
+                    </div>
+
+                    <form class="contact-form" id="contactForm" onsubmit="handleContactSubmit(event)">
+                        <div class="form-row grid grid-2">
+                            <div class="form-group">
+                                <label for="contactName">Dein Name *</label>
+                                <input type="text" id="contactName" class="form-input" placeholder="z.B. Maria Muster" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Deine E-Mail-Adresse *</label>
+                                <input type="email" id="contactEmail" class="form-input" placeholder="z.B. maria@beispiel.de" required>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactOffer">Gewünschtes Format *</label>
+                            <select id="contactOffer" class="form-input form-select" required>
+                                <option value="12-Wochen Time Balance Programm">12-Wochen Time Balance Programm (Mentoring)</option>
+                                <option value="1:1 Intensiv-Beratung (1 Std.)">1:1 Intensiv-Beratung (1 Std.)</option>
+                                <option value="Allgemeine Frage / Unverbindliches Erstgespräch">Allgemeine Frage / Erstgespräch</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactMessage">Deine Nachricht / Deine aktuelle Herausforderung *</label>
+                            <textarea id="contactMessage" class="form-input form-textarea" rows="5" placeholder="Beschreibe kurz deine aktuelle Situation: Wo verlierst du derzeit die meiste Zeit oder Energie?" required></textarea>
+                        </div>
+
+                        <!-- Direct Receiver Config Option -->
+                        <div class="form-note">
+                            <span>📧 E-Mail: <strong>julia.time.balance@gmail.com</strong> | 💬 Telegram: <a href="https://t.me/JuliaGeneberg" target="_blank" rel="noopener" style="color: var(--brand-emerald); font-weight: 600;">@JuliaGeneberg</a></span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-lg btn-block shadow-soft">
+                            Nachricht absenden
+                        </button>
+                    </form>
+                    <div class="form-success-message text-center" id="formSuccessMessage" style="display: none;">
+                        <div class="success-icon">✨</div>
+                        <h3>Vielen Dank für deine Nachricht!</h3>
+                        <p>Ich habe deine Anfrage erhalten und werde mich ganz bald bei dir melden.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="logo-title">Time <span class="accent-gold">Balance</span></span>
+                </div>
+                <p>Mit Ruhe, Fokus und Leichtigkeit zu deinen größten Erfolgen. Mentoring & Begleitung von Julia Geneberg.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Social Media</h4>
+                <ul>
+                    <li><a href="https://www.instagram.com/julia.time.balance/" target="_blank" rel="noopener">Instagram @julia.time.balance</a></li>
+                    <li><a href="https://www.instagram.com/julia_geneberg/?hl=de" target="_blank" rel="noopener">Instagram @julia_geneberg</a></li>
+                    <li><a href="https://www.tiktok.com/@julia_geneberg" target="_blank" rel="noopener">TikTok @julia_geneberg</a></li>
+                    <li><a href="https://t.me/JuliaGeneberg" target="_blank" rel="noopener">Telegram @JuliaGeneberg</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Rechtliches</h4>
+                <ul>
+                    <li><a href="#" id="openImpressum">Impressum</a></li>
+                    <li><a href="#" id="openDatenschutz">Datenschutzerklärung</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; <span id="year"></span> Time Balance Mentoring by Julia Geneberg. Alle Rechte vorbehalten. | Hoster: GitHub Pages (SSL-verschlüsselt)</p>
+        </div>
+    </footer>
+
+    <!-- Modal Impressum -->
+    <div class="modal" id="modalImpressum" aria-hidden="true">
+        <div class="modal-overlay" id="closeImpressumOverlay"></div>
+        <div class="modal-container glass-card">
+            <button class="modal-close" id="closeImpressumBtn">&times;</button>
+            <div class="modal-body">
+                <h2>Impressum</h2>
+                <p><strong>Diensteanbieter:</strong></p>
+                <p>
+                    Julia Geneberg<br>
+                    Time Balance Mentoring (Einzelunternehmen)<br>
+                    Wilhelmshöhe 39<br>
+                    33102 Paderborn<br>
+                    Deutschland
+                </p>
+
+                <p><strong>Kontaktmöglichkeiten:</strong><br>
+                    E-Mail: <a href="mailto:julia.time.balance@gmail.com" style="color: var(--brand-emerald);">julia.time.balance@gmail.com</a><br>
+                    Telegram: <a href="https://t.me/JuliaGeneberg" target="_blank" rel="noopener" style="color: var(--brand-emerald);">t.me/JuliaGeneberg</a>
+                </p>
+
+                <p><strong>Angaben zum Unternehmen:</strong><br>
+                    Umsatzsteuer-Identifikationsnummer (USt-ID): <strong>DE367524229</strong>
+                </p>
+
+                <p><strong>Audiovisuelle Mediendienste:</strong><br>
+                    Sitzland: Deutschland<br>
+                    Zuständige Regulierungs- bzw. Aufsichtsbehörde: Landesanstalt für Medien NRW (<a href="https://www.medienanstalt-nrw.de/" target="_blank" rel="noopener" style="color: var(--brand-emerald);">https://www.medienanstalt-nrw.de/</a>)
+                </p>
+
+                <p><strong>Social Media & Onlinepräsenzen:</strong><br>
+                    Dieses Impressum gilt auch für die folgenden Social-Media-Präsenzen und Onlineprofile:<br>
+                    • Instagram: <a href="https://www.instagram.com/julia.time.balance/" target="_blank" rel="noopener" style="color: var(--brand-emerald);">@julia.time.balance</a> | <a href="https://www.instagram.com/julia_geneberg/?hl=de" target="_blank" rel="noopener" style="color: var(--brand-emerald);">@julia_geneberg</a><br>
+                    • TikTok: <a href="https://www.tiktok.com/@julia_geneberg" target="_blank" rel="noopener" style="color: var(--brand-emerald);">@julia_geneberg</a>
+                </p>
+
+                <p><strong>Vorbehalt der Nutzung für Text und Data Mining:</strong><br>
+                    Der Inhaber dieser Website gestattet die Nutzung oder das Herunterladen von Inhalten dieser Website durch Dritte für die Entwicklung, das Training oder den Betrieb von künstlicher Intelligenz oder anderen maschinellen Lernsystemen ("Text und Data Mining") ausschließlich mit ausdrücklicher schriftlicher Zustimmung des Inhabers.
+                </p>
+
+                <p><strong>Haftungs- und Schutzrechtshinweise:</strong><br>
+                    <strong>Haftungsausschluss:</strong> Die Inhalte dieses Onlineangebotes wurden sorgfältig erstellt, dienen jedoch nur der Information.<br>
+                    <strong>Links auf fremde Webseiten:</strong> Die Inhalte fremder Webseiten, auf die wir verweisen, liegen außerhalb unseres Verantwortungsbereiches.<br>
+                    <strong>Urheberrechte und Markenrechte:</strong> Alle Inhalte wie Texte, Fotografien und Grafiken sind durch Schutzrechte geschützt.<br>
+                    <strong>Hinweise auf Rechtsverstöße:</strong> Sollten Sie Rechtsverstöße bemerken, bitten um einen Hinweis zur unverzüglichen Entfernung.
+                </p>
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 1.5rem;">
+                    Erstellt mit Unterstützung von Datenschutz-Generator.de von RA Dr. Thomas Schwenke.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal Datenschutz -->
+    <div class="modal" id="modalDatenschutz" aria-hidden="true">
+        <div class="modal-overlay" id="closeDatenschutzOverlay"></div>
+        <div class="modal-container glass-card">
+            <button class="modal-close" id="closeDatenschutzBtn">&times;</button>
+            <div class="modal-body">
+                <h2>Datenschutzerklärung</h2>
+                
+                <h3>Präambel</h3>
+                <p>Mit der folgenden Datenschutzerklärung möchten wir Sie darüber aufklären, welche Arten Ihrer personenbezogenen Daten (nachfolgend auch kurz als "Daten" bezeichnet) wir zu welchen Zwecken und in welchem Umfang verarbeiten. Die Datenschutzerklärung gilt für alle von uns durchgeführten Verarbeitungen personenbezogener Daten, sowohl im Rahmen der Erbringung unserer Leistungen als auch insbesondere auf unseren Webseiten, in mobilen Applikationen sowie innerhalb externer Onlinepräsenzen, wie z. B. unserer Social-Media-Profile (nachfolgend zusammenfassend bezeichnet als "Onlineangebot").</p>
+                <p><small>Stand: 29. Dezember 2025</small></p>
+
+                <h3>Verantwortlicher</h3>
+                <p>
+                    Julia Geneberg<br>
+                    Time Balance Mentoring (Einzelunternehmen)<br>
+                    Wilhelmshöhe 39<br>
+                    33102 Paderborn<br>
+                    Deutschland<br>
+                    E-Mail-Adresse: <a href="mailto:julia.time.balance@gmail.com" style="color: var(--brand-emerald);">julia.time.balance@gmail.com</a>
+                </p>
+
+                <h3>Übersicht der Verarbeitungen</h3>
+                <p>Die nachfolgende Übersicht fasst die Arten der verarbeiteten Daten und die Zwecke ihrer Verarbeitung zusammen und verweist auf die betroffenen Personen.</p>
+                <p><strong>Arten der verarbeiteten Daten:</strong> Bestandsdaten, Zahlungsdaten, Kontaktdaten, Inhaltsdaten, Vertragsdaten, Nutzungsdaten, Meta-, Kommunikations- und Verfahrensdaten, Protokolldaten.</p>
+                <p><strong>Kategorien betroffener Personen:</strong> Leistungsempfänger und Auftraggeber, Interessenten, Kommunikationspartner, Nutzer, Geschäfts- und Vertragspartner.</p>
+                <p><strong>Zwecke der Verarbeitung:</strong> Erbringung vertraglicher Leistungen und Erfüllung vertraglicher Pflichten, Kommunikation, Sicherheitsmaßnahmen, Direktmarketing, Büro- und Organisationsverfahren, Organisations- und Verwaltungsverfahren, Feedback, Marketing, Bereitstellung unseres Onlineangebotes und Nutzerfreundlichkeit, Informationstechnische Infrastruktur, Öffentlichkeitsarbeit.</p>
+
+                <h3>Maßgebliche Rechtsgrundlagen</h3>
+                <p>Maßgebliche Rechtsgrundlagen nach der DSGVO: Im Folgenden erhalten Sie eine Übersicht der Rechtsgrundlagen der DSGVO, auf deren Basis wir personenbezogene Daten verarbeiten:</p>
+                <ul>
+                    <li><strong>Einwilligung (Art. 6 Abs. 1 S. 1 lit. a) DSGVO)</strong> - Die betroffene Person hat ihre Einwilligung in die Verarbeitung gegeben.</li>
+                    <li><strong>Vertragserfüllung und vorvertragliche Anfragen (Art. 6 Abs. 1 S. 1 lit. b) DSGVO)</strong> - Die Verarbeitung ist für die Erfüllung eines Vertrags oder vorvertraglicher Maßnahmen erforderlich.</li>
+                    <li><strong>Rechtliche Verpflichtung (Art. 6 Abs. 1 S. 1 lit. c) DSGVO)</strong> - Die Verarbeitung ist zur Erfüllung einer rechtlichen Verpflichtung erforderlich.</li>
+                    <li><strong>Berechtigte Interessen (Art. 6 Abs. 1 S. 1 lit. f) DSGVO)</strong> - Zur Wahrung der berechtigten Interessen des Verantwortlichen.</li>
+                </ul>
+
+                <h3>Sicherheitsmaßnahmen & SSL-/TLS-Verschlüsselung (HTTPS)</h3>
+                <p>Wir treffen nach Maßgabe der gesetzlichen Vorgaben geeignete technische und organisatorische Maßnahmen, um ein dem Risiko angemessenes Schutzniveau zu gewährleisten. Um Ihre Daten zu schützen, setzen wir auf HTTPS mit TLS-/SSL-Verschlüsselungstechnologie.</p>
+
+                <h3>Allgemeine Informationen zur Datenspeicherung und Löschung</h3>
+                <p>Wir löschen personenbezogene Daten, sobald die zugrundeliegenden Einwilligungen widerrufen werden oder keine weiteren rechtlichen Grundlagen für die Verarbeitung bestehen (z.B. nach Ablauf steuerrechtlicher Aufbewahrungsfristen von 6–10 Jahren).</p>
+
+                <h3>Rechte der betroffenen Personen</h3>
+                <p>Ihnen stehen als Betroffene nach der DSGVO verschiedene Rechte zu (Widerspruchsrecht, Widerrufsrecht bei Einwilligungen, Auskunftsrecht, Recht auf Berichtigung, Recht auf Löschung und Einschränkung, Recht auf Datenübertragbarkeit, Beschwerderecht bei Aufsichtsbehörde).</p>
+
+                <h3>Bereitstellung des Onlineangebots & Webhosting (GitHub Pages)</h3>
+                <p>Für die Bereitstellung unseres Onlineangebotes nutzen wir Speicherplatz und Serverkapazitäten (GitHub Pages). Beim Aufruf der Seite werden technisch notwendige Server-Logfiles verarbeitet.</p>
+
+                <h3>Kontakt- und Anfrageverwaltung</h3>
+                <p>Bei der Kontaktaufnahme mit uns (per Kontaktformular, E-Mail, Telegram oder Social Media) werden die Angaben der anfragenden Personen verarbeitet, soweit dies zur Beantwortung der Kontaktanfragen erforderlich ist.</p>
+
+                <h3>Präsenzen in sozialen Netzwerken (Social Media)</h3>
+                <p>Wir unterhalten Onlinepräsenzen innerhalb sozialer Netzwerke (Instagram, TikTok, Telegram) und verarbeiten in diesem Rahmen Nutzerdaten, um mit den dort aktiven Nutzern zu kommunizieren.</p>
+
+                <h3>Plug-ins & Eingebettete Schriften (Google Fonts)</h3>
+                <p>Wir binden externe Schriften von Google Fonts ein, um eine technisch sichere, wartungsfreie und einheitliche Darstellung der Schriftarten zu gewährleisten.</p>
+
+                <p style="font-size: 0.8rem; color: var(--text-muted); margin-top: 2rem;">
+                    Erstellt mit Unterstützung von Datenschutz-Generator.de von RA Dr. Thomas Schwenke.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- JS -->
+    <script src="app.js"></script>
+</body>
+</html>
