@@ -341,15 +341,34 @@
     </footer>
 
     <script>
+        function showSuccessScreen(name) {
+            const form = document.getElementById('diagnoseForm');
+            const successEl = document.getElementById('diagSuccess');
+            const headerTag = document.querySelector('.form-page-header .section-tag');
+            const headerTitle = document.querySelector('.form-page-header .hero-title');
+            const headerSub = document.querySelector('.form-page-header .hero-subtitle');
+
+            if (headerTag) headerTag.innerText = 'Vielen Dank! ✨';
+            if (headerTitle) headerTitle.innerText = 'Deine Antworten wurden erfolgreich übermittelt!';
+            if (headerSub) headerSub.innerText = 'Du hast den ersten wichtigen Schritt für deine innere Ruhe & Klarheit gemacht. Ich schaue mir deine Antworten persönlich an.';
+
+            if (name) {
+                const successName = document.getElementById('successName');
+                if (successName) successName.innerText = name;
+            }
+
+            if (form) form.style.display = 'none';
+            if (successEl) {
+                successEl.style.display = 'block';
+                setTimeout(() => {
+                    successEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+        }
+
         document.addEventListener('DOMContentLoaded', () => {
             if (window.location.search.includes('success=true')) {
-                const form = document.getElementById('diagnoseForm');
-                const successEl = document.getElementById('diagSuccess');
-                if (form && successEl) {
-                    form.style.display = 'none';
-                    successEl.style.display = 'block';
-                    successEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
-                }
+                showSuccessScreen('');
             }
         });
 
@@ -373,8 +392,6 @@
             const name = document.getElementById('diagName').value.trim();
             const email = document.getElementById('diagEmail').value.trim();
 
-            document.getElementById('successName').innerText = name;
-
             // Collect all answers
             const b1_1 = getRadioVal('b1_q1');
             const b1_2 = getRadioVal('b1_q2');
@@ -395,9 +412,6 @@
             const b4_1 = getRadioVal('b4_q1');
             const b4_2 = getRadioVal('b4_q2');
             const challenge = document.getElementById('diagChallenge').value.trim() || 'Nicht angegeben';
-
-            const sendCopyCheck = document.getElementById('sendCopyCheck');
-            const sendCopy = sendCopyCheck ? sendCopyCheck.checked : true;
 
             const summaryText = `TIME BALANCE DIAGNOSE-FRAGEBOGEN
 =========================================
@@ -435,14 +449,10 @@ Datum: ${new Date().toLocaleDateString('de-DE')}
    "${challenge}"
 =========================================`;
 
-            // Display on success screen
-            document.getElementById('diagnoseForm').style.display = 'none';
-            const successEl = document.getElementById('diagSuccess');
-            successEl.style.display = 'block';
-            document.getElementById('summaryDisplay').innerText = summaryText;
-
-            // Scroll smoothly to top of success message
-            successEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Display on success screen and update header
+            showSuccessScreen(name);
+            const summaryDisplay = document.getElementById('summaryDisplay');
+            if (summaryDisplay) summaryDisplay.innerText = summaryText;
 
             // Send directly to julia.time.balance@gmail.com via Web3Forms API using FormData
             const formData = new FormData(document.getElementById('diagnoseForm'));
