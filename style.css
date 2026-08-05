@@ -738,9 +738,71 @@ a {
     margin-bottom: 1rem;
 }
 
-.badge-featured {
-    background: linear-gradient(135deg, var(--accent-gold) 0%, #B8860B 100%);
+.offers-grid-3 {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    align-items: stretch;
+}
+
+@media (max-width: 1024px) {
+    .offers-grid-3 {
+        grid-template-columns: 1fr;
+    }
+}
+
+.badge-free {
+    background: linear-gradient(135deg, #2A4836 0%, #3e6b50 100%);
     color: #FFF;
+}
+
+.btn-calendar {
+    background: linear-gradient(135deg, var(--brand-forest) 0%, #1f382a 100%);
+    color: #FFF !important;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    font-weight: 600;
+}
+
+.btn-calendar:hover {
+    background: linear-gradient(135deg, var(--accent-gold) 0%, #B8860B 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(197, 160, 89, 0.3);
+}
+
+.contact-avatar-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.5rem;
+}
+
+.contact-avatar-img {
+    width: 96px;
+    height: 96px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--accent-gold);
+    box-shadow: 0 10px 25px rgba(42, 72, 54, 0.18);
+    margin-bottom: 0.5rem;
+    transition: var(--transition-normal);
+}
+
+.contact-avatar-img:hover {
+    transform: scale(1.05);
+}
+
+.contact-avatar-label {
+    font-size: 0.95rem;
+    font-weight: 600;
+    color: var(--brand-forest);
+    background: var(--bg-light);
+    padding: 0.25rem 0.85rem;
+    border-radius: 99px;
+    border: 1px solid var(--border-gold);
 }
 
 .offer-featured {

@@ -119,8 +119,8 @@
                         </div>
 
                         <div class="strategy-box strategy-good">
-                            <h4>✨ Der Mittelweg: Die Time Balance Methode</h4>
-                            <p>Wir vereinen Ambitionen mit echter Lebensfreude. Verwirklich deine Träume – entspannt, strukturiert und ohne Burnout.</p>
+                            <h4>✨ Der optimale Weg: Die Time Balance Methode</h4>
+                            <p>Wir vereinen hohe Ambitionen mit echter Lebensfreude. Verwirkliche deine Träume – entspannt, individuell strukturiert und ohne Burnout.</p>
                         </div>
                     </div>
 
@@ -276,8 +276,30 @@
                     <p>Egal ob du schnelle Klarheit brauchst oder eine tiefgreifende 12-Wochen-Transformation suchst.</p>
                 </div>
 
-                <div class="grid grid-2 offers-grid">
-                    <!-- Offer 1: 1:1 Beratung -->
+                <div class="grid offers-grid-3">
+                    <!-- Offer 1: Kostenloses Erstgespräch -->
+                    <div class="glass-card offer-card">
+                        <div class="offer-badge badge-free">Kostenfrei</div>
+                        <h3>Kostenloses Erstgespräch</h3>
+                        <div class="offer-duration">30 Minuten 1:1 Kennenlernen (0 €)</div>
+                        <p class="offer-intro">Lerne Julia persönlich kennen, bespreche deine aktuelle Situation und erfahre, wie die Time Balance Methode dich unterstützen kann.</p>
+                        <ul class="offer-features">
+                            <li>✓ 30 Min. unverbindliches Video-Gespräch (1:1)</li>
+                            <li>✓ Erste Standortbestimmung deines Alltags</li>
+                            <li>✓ Klärung all deiner Fragen zum Mentoring</li>
+                            <li>✓ 100% kostenlos & ohne Verpflichtung</li>
+                        </ul>
+                        <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: auto;">
+                            <a href="https://calendar.google.com/" target="_blank" rel="noopener" class="btn btn-calendar btn-block shadow-soft">
+                                📅 Termin im Kalender wählen
+                            </a>
+                            <button class="btn btn-outline btn-block select-offer-btn" data-offer="Kostenloses 30-Minuten Kennenlerngespräch">
+                                Oder per Formular anfragen
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Offer 2: 1:1 Beratung -->
                     <div class="glass-card offer-card">
                         <div class="offer-badge">Schnelle Hilfe</div>
                         <h3>1:1 Intensiv-Beratung</h3>
@@ -289,12 +311,12 @@
                             <li>✓ Aufdeckung deiner größten Zeit- & Energieräuber</li>
                             <li>✓ Konkreter Handlungsplan für sofortige Entlastung</li>
                         </ul>
-                        <button class="btn btn-outline btn-block select-offer-btn" data-offer="1:1 Intensiv-Beratung (1 Std.)">
+                        <button class="btn btn-outline btn-block select-offer-btn" data-offer="1:1 Intensiv-Beratung (1 Std.)" style="margin-top: auto;">
                             Beratung anfragen
                         </button>
                     </div>
 
-                    <!-- Offer 2: 12-Wochen Programm -->
+                    <!-- Offer 3: 12-Wochen Programm -->
                     <div class="glass-card offer-card offer-featured">
                         <div class="offer-badge badge-featured">Empfohlen</div>
                         <h3>12-Wochen Time Balance Programm</h3>
@@ -307,7 +329,7 @@
                             <li>✓ Praktische Aufgaben im digitalen Workbook (GTD, Raumordnung & Wochenroutinen)</li>
                             <li>✓ Erstellung deiner individuellen Balance-Formel</li>
                         </ul>
-                        <button class="btn btn-primary btn-block shadow-soft select-offer-btn" data-offer="12-Wochen Time Balance Programm">
+                        <button class="btn btn-primary btn-block shadow-soft select-offer-btn" data-offer="12-Wochen Time Balance Programm" style="margin-top: auto;">
                             Für das Programm bewerben
                         </button>
                     </div>
@@ -320,6 +342,10 @@
             <div class="container">
                 <div class="contact-wrapper glass-card">
                     <div class="contact-header text-center">
+                        <div class="contact-avatar-wrapper">
+                            <img src="julia-geneberg.jpg" alt="Julia Geneberg – Deine Mentorin" class="contact-avatar-img">
+                            <span class="contact-avatar-label">Julia Geneberg</span>
+                        </div>
                         <span class="section-tag">Kontakt & Anfrage</span>
                         <h2>Starte deine Reise zu mehr Time Balance</h2>
                         <p>Sende Julia Geneberg direkt eine Nachricht. Ich melde mich innerhalb von 24 Stunden persönlich bei dir.</p>
@@ -340,9 +366,10 @@
                         <div class="form-group">
                             <label for="contactOffer">Gewünschtes Format *</label>
                             <select id="contactOffer" class="form-input form-select" required>
-                                <option value="12-Wochen Time Balance Programm">12-Wochen Time Balance Programm (Mentoring)</option>
+                                <option value="Kostenloses 30-Minuten Kennenlerngespräch">Kostenloses 30-Minuten Kennenlerngespräch (0 €)</option>
                                 <option value="1:1 Intensiv-Beratung (1 Std.)">1:1 Intensiv-Beratung (1 Std.)</option>
-                                <option value="Allgemeine Frage / Unverbindliches Erstgespräch">Allgemeine Frage / Erstgespräch</option>
+                                <option value="12-Wochen Time Balance Programm">12-Wochen Time Balance Programm (Mentoring)</option>
+                                <option value="Allgemeine Frage">Allgemeine Frage / Sonstiges</option>
                             </select>
                         </div>
 
@@ -363,7 +390,11 @@
                     <div class="form-success-message text-center" id="formSuccessMessage" style="display: none;">
                         <div class="success-icon">✨</div>
                         <h3>Vielen Dank für deine Nachricht!</h3>
-                        <p>Ich habe deine Anfrage erhalten und werde mich ganz bald bei dir melden.</p>
+                        <p>Ich habe deine Anfrage erhalten und werde mich ganz bald persönlich bei dir melden.</p>
+                        <div style="margin-top: 1.25rem; padding: 1.25rem; background: rgba(197, 160, 89, 0.12); border-radius: var(--radius-md); border: 1px solid var(--accent-gold);">
+                            <strong>💡 Tipp zur Vorbereitung:</strong><br>
+                            Fülle gerne schon vorab deinen kostenlosen <a href="fragebogen.html" target="_blank" style="color: var(--brand-forest); text-decoration: underline; font-weight: 700;">Time Balance Fragebogen</a> aus. So lernen wir deine Situation vorab kennen und nutzen deine 30 Minuten optimal!
+                        </div>
                     </div>
                 </div>
             </div>
