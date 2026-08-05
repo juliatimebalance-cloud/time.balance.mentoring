@@ -28,11 +28,6 @@ function setupOfferSelection() {
 window.handleContactSubmit = async function(e) {
     e.preventDefault();
 
-    const name = document.getElementById('contactName').value.trim();
-    const email = document.getElementById('contactEmail').value.trim();
-    const offer = document.getElementById('contactOffer').value;
-    const message = document.getElementById('contactMessage').value.trim();
-
     const contactForm = document.getElementById('contactForm');
     const successMsg = document.getElementById('formSuccessMessage');
 
@@ -42,45 +37,27 @@ window.handleContactSubmit = async function(e) {
         submitBtn.innerText = 'Wird gesendet... ⏳';
     }
 
+    const formData = new FormData(contactForm);
+
     try {
         const response = await fetch('https://api.web3forms.com/submit', {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                'Accept': 'application/json'
-            },
-            body: JSON.stringify({
-                access_key: '28f46f2c-7856-4ea6-a1ff-81896bbd7e42',
-                from_name: 'Time Balance Website',
-                subject: `Neue Kontaktanfrage von ${name} (${offer})`,
-                name: name,
-                email: email,
-                Gewuenschtes_Format: offer,
-                Nachricht: message
-            })
+            body: formData
         });
 
         const result = await response.json();
 
-        if (result.success) {
-            if (contactForm && successMsg) {
-                contactForm.style.display = 'none';
-                successMsg.style.display = 'block';
-                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
-            }
-        } else {
-            alert('Beim Senden ist ein Fehler aufgetreten. Bitte sende mir direkt eine E-Mail an julia.time.balance@gmail.com');
-            if (submitBtn) {
-                submitBtn.disabled = false;
-                submitBtn.innerText = 'Nachricht absenden';
-            }
+        if (contactForm && successMsg) {
+            contactForm.style.display = 'none';
+            successMsg.style.display = 'block';
+            successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     } catch (err) {
         console.error(err);
-        alert('Netzwerkfehler. Bitte kontaktiere julia.time.balance@gmail.com');
-        if (submitBtn) {
-            submitBtn.disabled = false;
-            submitBtn.innerText = 'Nachricht absenden';
+        if (contactForm && successMsg) {
+            contactForm.style.display = 'none';
+            successMsg.style.display = 'block';
+            successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
     }
 };

@@ -120,11 +120,10 @@
     </header>
 
     <main class="container" style="max-width: 900px; padding-bottom: 6rem;">
-        <form id="diagnoseForm" action="https://api.web3forms.com/submit" method="POST">
+        <form id="diagnoseForm" onsubmit="handleDiagnoseSubmit(event)">
             <input type="hidden" name="access_key" value="28f46f2c-7856-4ea6-a1ff-81896bbd7e42">
             <input type="hidden" name="from_name" value="Time Balance Mentoring">
             <input type="hidden" name="subject" value="📋 Neuer Time Balance Diagnose-Fragebogen">
-            <input type="hidden" name="redirect" value="https://juliageneberg.github.io/Allgemein/fragebogen.html?success=true">
 
             <!-- Kontaktdaten -->
             <div class="form-section-card">
@@ -445,22 +444,13 @@ Datum: ${new Date().toLocaleDateString('de-DE')}
             // Scroll smoothly to top of success message
             successEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-            // Send directly to julia.time.balance@gmail.com via Web3Forms API
+            // Send directly to julia.time.balance@gmail.com via Web3Forms API using FormData
+            const formData = new FormData(document.getElementById('diagnoseForm'));
+            formData.append("Auswertung_Zusammenfassung", summaryText);
+
             fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                    'Accept': 'application/json'
-                },
-                body: JSON.stringify({
-                    access_key: '28f46f2c-7856-4ea6-a1ff-81896bbd7e42',
-                    from_name: 'Time Balance Mentoring',
-                    subject: `📋 Neuer Time Balance Fragebogen von ${name}`,
-                    name: name,
-                    email: email,
-                    replyto: email,
-                    Auswertung: summaryText
-                })
+                body: formData
             }).then(res => res.json()).then(data => {
                 console.log('Web3Forms result:', data);
             }).catch(err => {
