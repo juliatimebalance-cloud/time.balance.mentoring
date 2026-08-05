@@ -25,31 +25,64 @@ function setupOfferSelection() {
 }
 
 // Handle Contact Form Submission
-window.handleContactSubmit = function(e) {
+window.handleContactSubmit = async function(e) {
     e.preventDefault();
 
-    const name = document.getElementById('contactName').value;
-    const email = document.getElementById('contactEmail').value;
+    const name = document.getElementById('contactName').value.trim();
+    const email = document.getElementById('contactEmail').value.trim();
     const offer = document.getElementById('contactOffer').value;
-    const message = document.getElementById('contactMessage').value;
+    const message = document.getElementById('contactMessage').value.trim();
 
     const contactForm = document.getElementById('contactForm');
     const successMsg = document.getElementById('formSuccessMessage');
 
-    // Show Confirmation Message
-    if (contactForm && successMsg) {
-        contactForm.style.display = 'none';
-        successMsg.style.display = 'block';
+    const submitBtn = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
+    if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.innerText = 'Wird gesendet... ⏳';
     }
 
-    // Direct Mailto Trigger to julia.time.balance@gmail.com
-    const mailSubject = encodeURIComponent(`Anfrage für Time Balance: ${offer}`);
-    const mailBody = encodeURIComponent(`Hallo Julia,\n\nich interessiere mich für: ${offer}.\n\nName: ${name}\nE-Mail: ${email}\n\nNachricht:\n${message}`);
-    
-    // Launch Mail Client to send to julia.time.balance@gmail.com
-    setTimeout(() => {
-        window.location.href = `mailto:julia.time.balance@gmail.com?subject=${mailSubject}&body=${mailBody}`;
-    }, 400);
+    try {
+        const response = await fetch('https://api.web3forms.com/submit', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Accept': 'application/json'
+            },
+            body: JSON.stringify({
+                access_key: '28f46f2c-7856-4ea6-a1ff-81896bbd7e42',
+                from_name: 'Time Balance Website',
+                subject: `Neue Kontaktanfrage von ${name} (${offer})`,
+                name: name,
+                email: email,
+                Gewuenschtes_Format: offer,
+                Nachricht: message
+            })
+        });
+
+        const result = await response.json();
+
+        if (result.success) {
+            if (contactForm && successMsg) {
+                contactForm.style.display = 'none';
+                successMsg.style.display = 'block';
+                successMsg.scrollIntoView({ behavior: 'smooth', block: 'center' });
+            }
+        } else {
+            alert('Beim Senden ist ein Fehler aufgetreten. Bitte sende mir direkt eine E-Mail an julia.time.balance@gmail.com');
+            if (submitBtn) {
+                submitBtn.disabled = false;
+                submitBtn.innerText = 'Nachricht absenden';
+            }
+        }
+    } catch (err) {
+        console.error(err);
+        alert('Netzwerkfehler. Bitte kontaktiere julia.time.balance@gmail.com');
+        if (submitBtn) {
+            submitBtn.disabled = false;
+            submitBtn.innerText = 'Nachricht absenden';
+        }
+    }
 };
 
 // Modals Setup (Impressum & Datenschutz)

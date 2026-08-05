@@ -307,8 +307,8 @@
             <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 680px; margin: 0 auto 1.5rem; line-height: 1.6;">
                 Du hast den ersten wichtigen Schritt für deine innere Ruhe & Klarheit gemacht. Ich schaue mir deine Antworten persönlich an und freue mich sehr auf unser Gespräch!
             </p>
-            <p style="font-size: 0.95rem; color: var(--text-muted); margin-bottom: 1.5rem;">
-                Ein E-Mail-Fenster öffnet sich automatisch an <strong>julia.time.balance@gmail.com</strong> (inkl. Kopie an deine E-Mail-Adresse).
+            <p style="font-size: 0.95rem; color: var(--brand-forest); font-weight: 500; margin-bottom: 1.5rem;">
+                ✅ Deine Antworten wurden automatisch direkt an <strong>julia.time.balance@gmail.com</strong> übermittelt.
             </p>
 
             <div style="background: #FFF; border: 1px solid var(--border-gold); border-radius: var(--radius-md); padding: 1.5rem; max-width: 750px; margin: 0 auto 2rem; text-align: left; box-shadow: var(--shadow-soft);">
@@ -429,14 +429,27 @@ Datum: ${new Date().toLocaleDateString('de-DE')}
             // Scroll smoothly to top of success message
             successEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
 
-            // Trigger Mailto with CC (Julia + submitter)
-            const mailSubject = encodeURIComponent(`Time Balance Fragebogen: ${name}`);
-            const ccParam = sendCopy ? `&cc=${encodeURIComponent(email)}` : '';
-            const mailUrl = `mailto:julia.time.balance@gmail.com?subject=${mailSubject}${ccParam}&body=${encodeURIComponent(summaryText)}`;
-
-            setTimeout(() => {
-                window.location.href = mailUrl;
-            }, 400);
+            // Send directly to julia.time.balance@gmail.com via Web3Forms API
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'Accept': 'application/json'
+                },
+                body: JSON.stringify({
+                    access_key: '28f46f2c-7856-4ea6-a1ff-81896bbd7e42',
+                    from_name: 'Time Balance Mentoring',
+                    subject: `📋 Neuer Time Balance Fragebogen von ${name}`,
+                    name: name,
+                    email: email,
+                    replyto: email,
+                    Auswertung: summaryText
+                })
+            }).then(res => res.json()).then(data => {
+                console.log('Web3Forms result:', data);
+            }).catch(err => {
+                console.error('Web3Forms error:', err);
+            });
         }
     </script>
 </body>
