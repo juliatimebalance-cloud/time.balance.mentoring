@@ -318,35 +318,41 @@ a {
 }
 
 .hero-profile {
-    margin-bottom: 1.5rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
+    margin-bottom: 1.5rem !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
 }
 
 .hero-avatar-circle {
-    position: relative;
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    padding: 4px;
-    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--brand-forest) 100%);
-    box-shadow: 0 12px 30px rgba(42, 72, 54, 0.18);
-    transition: var(--transition-normal);
+    position: relative !important;
+    width: 120px !important;
+    height: 120px !important;
+    min-width: 120px !important;
+    min-height: 120px !important;
+    max-width: 120px !important;
+    max-height: 120px !important;
+    border-radius: 50% !important;
+    padding: 4px !important;
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--brand-forest) 100%) !important;
+    box-shadow: 0 12px 30px rgba(42, 72, 54, 0.18) !important;
+    transition: var(--transition-normal) !important;
+    overflow: hidden !important;
+    display: inline-block !important;
 }
 
 .hero-avatar-circle:hover {
-    transform: scale(1.06);
-    box-shadow: 0 15px 35px rgba(197, 160, 89, 0.3);
+    transform: scale(1.06) !important;
+    box-shadow: 0 15px 35px rgba(197, 160, 89, 0.3) !important;
 }
 
 .hero-avatar-img {
-    width: 100%;
-    height: 100%;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    border: 2px solid #FFF;
+    width: 100% !important;
+    height: 100% !important;
+    border-radius: 50% !important;
+    object-fit: cover !important;
+    display: block !important;
+    border: 2px solid #FFF !important;
 }
 
 .hero-badge {
