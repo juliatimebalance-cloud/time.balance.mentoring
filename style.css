@@ -317,6 +317,38 @@ a {
     max-width: 920px;
 }
 
+.hero-profile {
+    margin-bottom: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.hero-avatar-circle {
+    position: relative;
+    width: 110px;
+    height: 110px;
+    border-radius: 50%;
+    padding: 4px;
+    background: linear-gradient(135deg, var(--accent-gold) 0%, var(--brand-forest) 100%);
+    box-shadow: 0 12px 30px rgba(42, 72, 54, 0.18);
+    transition: var(--transition-normal);
+}
+
+.hero-avatar-circle:hover {
+    transform: scale(1.06);
+    box-shadow: 0 15px 35px rgba(197, 160, 89, 0.3);
+}
+
+.hero-avatar-img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    border: 2px solid #FFF;
+}
+
 .hero-badge {
     display: inline-flex;
     align-items: center;
