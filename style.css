@@ -22,10 +22,10 @@
     --border-light: rgba(42, 72, 54, 0.1);
     --border-gold: rgba(197, 160, 89, 0.3);
     
-    /* Typography */
-    --font-heading: 'Outfit', sans-serif;
-    --font-serif: 'Cormorant Garamond', serif;
-    --font-body: 'Inter', sans-serif;
+    /* Typography - 100% Local & Privacy Compliant (DSGVO-safe) */
+    --font-heading: 'Outfit', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    --font-serif: 'Cormorant Garamond', Georgia, 'Cambria', 'Times New Roman', serif;
+    --font-body: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
 
     /* Transitions & Shadows */
     --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
