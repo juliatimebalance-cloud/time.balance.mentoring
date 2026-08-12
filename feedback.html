@@ -1,0 +1,616 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Erfahrungsbericht & Feedback | Time Balance Mentoring – Julia Geneberg</title>
+    <meta name="description" content="Teile deine Erfahrungen, deine Transformation und dein Feedback zum Time Balance Mentoring mit Julia Geneberg.">
+    
+    <!-- CSS (System & Local Fonts - 100% DSGVO-konform ohne US-Datentransfer) -->
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .form-page-header {
+            padding: 9rem 0 3rem;
+            text-align: center;
+        }
+        .form-section-card {
+            background: #FFF;
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-soft);
+        }
+        .form-section-card h3 {
+            font-size: 1.6rem;
+            color: var(--brand-forest);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+        .question-group {
+            margin-bottom: 1.75rem;
+            padding-bottom: 1.25rem;
+            border-bottom: 1px solid rgba(42, 72, 54, 0.06);
+        }
+        .question-group:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        .question-label {
+            font-weight: 600;
+            color: var(--text-primary);
+            font-size: 1.05rem;
+            margin-bottom: 0.75rem;
+            display: block;
+        }
+        .radio-options {
+            display: flex;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+        }
+        .radio-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            font-size: 0.95rem;
+            color: var(--text-secondary);
+            background: var(--bg-light);
+            padding: 0.6rem 1rem;
+            border-radius: var(--radius-sm);
+            border: 1px solid var(--border-light);
+            transition: var(--transition);
+        }
+        .radio-label:hover {
+            border-color: var(--accent-gold);
+            background: rgba(197, 160, 89, 0.08);
+        }
+        .radio-label input {
+            accent-color: var(--brand-forest);
+            width: 18px;
+            height: 18px;
+        }
+
+        /* Scale 1-10 Buttons */
+        .scale-options {
+            display: grid;
+            grid-template-columns: repeat(10, 1fr);
+            gap: 0.4rem;
+            margin-top: 0.5rem;
+        }
+        @media (max-width: 600px) {
+            .scale-options {
+                grid-template-columns: repeat(5, 1fr);
+            }
+        }
+        .scale-item {
+            text-align: center;
+        }
+        .scale-item input {
+            display: none;
+        }
+        .scale-box {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 42px;
+            background: var(--bg-light);
+            border: 1px solid var(--border-light);
+            border-radius: var(--radius-sm);
+            font-weight: 600;
+            color: var(--brand-forest);
+            cursor: pointer;
+            transition: var(--transition);
+        }
+        .scale-item input:checked + .scale-box {
+            background: var(--brand-forest);
+            color: #FFF;
+            border-color: var(--brand-forest);
+            box-shadow: 0 4px 12px rgba(42, 72, 54, 0.2);
+        }
+        .scale-labels {
+            display: flex;
+            justify-content: space-between;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+            margin-top: 0.4rem;
+        }
+
+        /* Star Rating */
+        .star-rating {
+            display: flex;
+            gap: 0.5rem;
+            direction: row-reverse;
+            justify-content: flex-end;
+            margin-top: 0.5rem;
+        }
+        .star-rating input {
+            display: none;
+        }
+        .star-rating label {
+            font-size: 2rem;
+            color: #DDD;
+            cursor: pointer;
+            transition: color 0.2s ease;
+        }
+        .star-rating label:hover,
+        .star-rating label:hover ~ label,
+        .star-rating input:checked ~ label {
+            color: var(--accent-gold);
+        }
+
+        /* Other Option Textfield Toggle */
+        .other-format-wrapper {
+            margin-top: 0.75rem;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Subtle Background Glows -->
+    <div class="bg-glow glow-light-1"></div>
+    <div class="bg-glow glow-light-2"></div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <a href="index.html" class="logo">
+                <div class="logo-icon-wrapper">
+                    <svg class="logo-clock-svg" viewBox="0 0 100 100" width="38" height="38">
+                        <circle cx="50" cy="50" r="44" fill="none" stroke="currentColor" stroke-width="3" opacity="0.2"/>
+                        <circle cx="50" cy="50" r="44" fill="none" stroke="url(#goldGradient)" stroke-width="3" stroke-dasharray="276" stroke-dashoffset="60"/>
+                        <line x1="50" y1="50" x2="50" y2="24" stroke="currentColor" stroke-width="3.5" stroke-linecap="round"/>
+                        <line x1="50" y1="50" x2="68" y2="50" stroke="url(#goldGradient)" stroke-width="3.5" stroke-linecap="round"/>
+                        <circle cx="50" cy="50" r="5" fill="currentColor"/>
+                        <circle cx="50" cy="12" r="3" fill="#D4AF37"/>
+                        <circle cx="88" cy="50" r="3" fill="#2A4836"/>
+                        <defs>
+                            <linearGradient id="goldGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stop-color="#D4AF37"/>
+                                <stop offset="100%" stop-color="#B8860B"/>
+                            </linearGradient>
+                        </defs>
+                    </svg>
+                </div>
+                <div class="logo-text-group">
+                    <span class="logo-title">Time <span class="accent-gold">Balance</span></span>
+                    <span class="logo-subtitle">by Julia Geneberg</span>
+                </div>
+            </a>
+            <div class="nav-links">
+                <a href="index.html#philosophie">Philosophie</a>
+                <a href="index.html#angebote">Angebote</a>
+                <a href="fragebogen.html">Diagnose-Fragebogen</a>
+                <a href="index.html#kontakt" class="btn btn-nav btn-primary">Kontakt</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Header Section -->
+    <header class="form-page-header container">
+        <div class="hero-profile" style="margin-bottom: 1.5rem; display: flex; justify-content: center; align-items: center;">
+            <div class="hero-avatar-circle" style="width: 110px; height: 110px; min-width: 110px; min-height: 110px; max-width: 110px; max-height: 110px; border-radius: 50%; padding: 4px; background: linear-gradient(135deg, var(--accent-gold) 0%, var(--brand-forest) 100%); box-shadow: 0 10px 25px rgba(42, 72, 54, 0.2); overflow: hidden; display: block;">
+                <img src="julia-geneberg.jpg" alt="Julia Geneberg – Time Balance Mentorin & Begleiterin" class="hero-avatar-img" style="width: 100%; height: 100%; border-radius: 50%; object-fit: cover; display: block; border: 2px solid #FFF;">
+            </div>
+        </div>
+        <span class="section-tag">Deine Erfahrungen & Feedback</span>
+        <h1 class="hero-title" style="font-size: 2.4rem; margin-top: 0.5rem;">
+            Wie war deine Reise mit <span class="gradient-text">Time Balance</span>?
+        </h1>
+        <p class="hero-subtitle" style="max-width: 680px; margin: 1rem auto 0;">
+            Danke, dass du dir 3–5 Minuten Zeit nimmst! Dein persönlicher Erfahrungsbericht hilft mir, das Mentoring stetig zu verbessern, und inspiriert andere Frauen auf ihrem Weg zu mehr Ruhe & Leichtigkeit.
+        </p>
+    </header>
+
+    <main class="container" style="max-width: 850px; margin-bottom: 5rem;">
+        
+        <!-- Feedback Form -->
+        <form id="feedbackForm" onsubmit="handleFeedbackSubmit(event)">
+            <input type="hidden" name="access_key" value="28f46f2c-7856-4ea6-a1ff-81896bbd7e42">
+            <input type="hidden" name="from_name" value="Time Balance Feedback Formular">
+            <input type="hidden" name="subject" value="Neues Kunden-Feedback / Erfahrungsbericht">
+
+            <!-- SECTION 1: Personal Data & Course -->
+            <div class="form-section-card">
+                <h3>👤 1. Allgemeine Angaben & dein Programm</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    Teile mir kurz mit, wer du bist und an welchem Mentoring-Format du teilgenommen hast.
+                </p>
+
+                <div class="form-row grid grid-2" style="margin-bottom: 1.25rem;">
+                    <div class="form-group">
+                        <label for="fbName" class="question-label">Dein Name / Vorname *</label>
+                        <input type="text" id="fbName" name="name" class="form-input" placeholder="z.B. Maria Muster" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="fbEmail" class="question-label">Deine E-Mail-Adresse *</label>
+                        <input type="email" id="fbEmail" name="email" class="form-input" placeholder="z.B. maria@beispiel.de" required>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label">Welches Angebot / Programm hast du bei Julia absolviert? *</label>
+                    <div class="radio-options" style="flex-direction: column; gap: 0.75rem;">
+                        <label class="radio-label">
+                            <input type="radio" name="absolviertes_format" value="12-Wochen Time Balance Programm" required onclick="toggleOtherFormat(false)">
+                            12-Wochen Time Balance Programm (Mentoring)
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="absolviertes_format" value="1:1 Intensiv-Beratung (1 Std.)" onclick="toggleOtherFormat(false)">
+                            1:1 Intensiv-Beratung (1 Std. Einzel-Mentoring)
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="absolviertes_format" value="Kostenloses 30-Min. Kennenlerngespräch" onclick="toggleOtherFormat(false)">
+                            Kostenloses 30-Minuten Kennenlerngespräch
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="absolviertes_format" id="radioSonstiges" value="Sonstiges" onclick="toggleOtherFormat(true)">
+                            Sonstiges Format / anderer Kurs / Workshop
+                        </label>
+                    </div>
+
+                    <!-- Custom Text Field if Sonstiges is selected -->
+                    <div class="other-format-wrapper" id="otherFormatWrapper">
+                        <label for="otherFormatInput" class="question-label" style="font-size: 0.9rem; margin-top: 0.5rem; color: var(--brand-forest);">
+                            Bitte gib hier kurz den Namen des Kurses oder Workshops an:
+                        </label>
+                        <input type="text" id="otherFormatInput" name="sonstiges_format_text" class="form-input" placeholder="z.B. Tages-Workshop, Gruppenkurs...">
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 2: Status BEFORE -->
+            <div class="form-section-card">
+                <h3>⚡ 2. Deine Ausgangslage (Punkt A - VORHER)</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    Erinnere dich kurz an die Zeit vor unserer Zusammenarbeit zurück.
+                </p>
+
+                <div class="question-group">
+                    <label for="fbBeforeSituation" class="question-label">
+                        Wie sah dein Alltag VOR dem Mentoring aus? Mit welchen konkreten Problemen, Zeitfressern oder Überforderungen bist du zu mir gekommen? *
+                    </label>
+                    <textarea id="fbBeforeSituation" name="ausgangslage_vorher" class="form-input form-textarea" rows="4" placeholder="Beschreibe kurz deine Situation damals: z.B. ständiges Stressgefühl, keine Feierabend-Ruhe, Chaos bei den Prioritäten..." required></textarea>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label">
+                        Wie hoch war dein gefühlter Stress- & Überforderungspegel VOR dem Mentoring? (1 = sehr entspannt, 10 = absoluter Burnout-Druck) *
+                    </label>
+                    <div class="scale-options">
+                        <div class="scale-item"><input type="radio" name="stress_vorher" id="s1" value="1" required><label for="s1" class="scale-box">1</label></div>
+                        <div class="scale-item"><input type="radio" name="stress_vorher" id="s2" value="2"><label for="s2" class="scale-box">2</label></div>
+                        <div class="scale-item"><input type="radio" name="stress_vorher" id="s3" value="3"><label for="s3" class="scale-box">3</label></div>
+                        <div class="scale-item"><input type="radio" name="stress_vorher" id="s4" value="4"><label for="s4" class="scale-box">4</label></div>
+                        <div class="scale-item"><input type="radio" name="stress_vorher" id="s5" value="5"><label for="s5" class="scale-box">5</label></div>
+                        <div class="scale-item"><input type="radio" name="stress_vorher" id="s6" value="6"><label for="s6" class="scale-box">6</label></div>
+                        <div class="scale-item"><input type="radio" name="stress_vorher" id="s7" value="7"><label for="s7" class="scale-box">7</label></div>
+                        <div class="scale-item"><input type="radio" name="stress_vorher" id="s8" value="8"><label for="s8" class="scale-box">8</label></div>
+                        <div class="scale-item"><input type="radio" name="stress_vorher" id="s9" value="9"><label for="s9" class="scale-box">9</label></div>
+                        <div class="scale-item"><input type="radio" name="stress_vorher" id="s10" value="10"><label for="s10" class="scale-box">10</label></div>
+                    </div>
+                    <div class="scale-labels">
+                        <span>🌿 Minimal (1)</span>
+                        <span>🔥 Extrem hoch (10)</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 3: Status AFTER & Transformation -->
+            <div class="form-section-card">
+                <h3>✨ 3. Deine Transformation (Punkt B - NACHHER)</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    Lass uns auf deine Ergebnisse schauen!
+                </p>
+
+                <div class="question-group">
+                    <label for="fbAfterResults" class="question-label">
+                        Was hat sich SEIT dem Mentoring bei dir verändert? Welche konkreten Durchbrüche oder Verbesserungen konntest du erzielen? *
+                    </label>
+                    <textarea id="fbAfterResults" name="ergebnisse_nachher" class="form-input form-textarea" rows="4" placeholder="z.B. Ich gehe abends entspannt schlafen, meine Wochenstruktur steht fest, ich kann wieder Nein sagen..." required></textarea>
+                </div>
+
+                <div class="question-group">
+                    <label for="fbBiggestWin" class="question-label">
+                        Was ist heute dein allergrößter Gewinn in deinem Alltag? *
+                    </label>
+                    <textarea id="fbBiggestWin" name="groesster_gewinn" class="form-input form-textarea" rows="3" placeholder="z.B. Mehr Zeit für mich selbst, echte innere Ruhe, klare Prioritäten im Job..." required></textarea>
+                </div>
+            </div>
+
+            <!-- SECTION 4: Materials & Support -->
+            <div class="form-section-card">
+                <h3>📚 4. Bewertung der Materialien & Begleitung</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    Wie haben dir die Unterlagen und die Zusammenarbeit gefallen?
+                </p>
+
+                <div class="question-group">
+                    <label class="question-label">Wie bewertest du das Time Balance Workbook & die Arbeitsmaterialien?</label>
+                    <div class="star-rating">
+                        <input type="radio" id="star5" name="materialien_sterne" value="5 Sterne ⭐⭐⭐⭐⭐"><label for="star5" title="5 Sterne">★</label>
+                        <input type="radio" id="star4" name="materialien_sterne" value="4 Sterne ⭐⭐⭐⭐"><label for="star4" title="4 Sterne">★</label>
+                        <input type="radio" id="star3" name="materialien_sterne" value="3 Sterne ⭐⭐⭐"><label for="star3" title="3 Sterne">★</label>
+                        <input type="radio" id="star2" name="materialien_sterne" value="2 Sterne ⭐⭐"><label for="star2" title="2 Sterne">★</label>
+                        <input type="radio" id="star1" name="materialien_sterne" value="1 Stern ⭐"><label for="star1" title="1 Stern">★</label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label for="fbMaterialsText" class="question-label">
+                        Anmerkungen zu den Materialien & Übungen (Was hat dir am besten geholfen? Gab es etwas, das gefehlt hat?):
+                    </label>
+                    <textarea id="fbMaterialsText" name="materialien_feedback" class="form-input form-textarea" rows="3" placeholder="Dein Feedback zu den Übungen, Vorlagen und Inhalten..."></textarea>
+                </div>
+
+                <div class="question-group">
+                    <label for="fbMentoringExperience" class="question-label">
+                        Wie hast du die persönliche 1:1 Begleitung & Unterstützung durch Julia empfunden? *
+                    </label>
+                    <textarea id="fbMentoringExperience" name="begleitung_feedback" class="form-input form-textarea" rows="3" placeholder="z.B. Sehr einfühlsam, strukturierend, ermutigend, immer auf den Punkt..." required></textarea>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label">Würdest du Time Balance Mentoring deiner besten Freundin oder Kollegin weiterempfehlen? *</label>
+                    <div class="radio-options">
+                        <label class="radio-label">
+                            <input type="radio" name="weiterempfehlung" value="Ja, zu 100%!" required>
+                            Ja, zu 100%! ⭐
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="weiterempfehlung" value="Ja">
+                            Ja
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="weiterempfehlung" value="Eher ja">
+                            Eher ja
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- SECTION 5: Testimonial & Release -->
+            <div class="form-section-card">
+                <h3>💬 5. Dein Fazit & Freigabe (Social Proof)</h3>
+                <p style="color: var(--text-secondary); margin-bottom: 1.5rem; font-size: 0.95rem;">
+                    Möchtest du andere Frauen mit deinen Worten ermutigen?
+                </p>
+
+                <div class="question-group">
+                    <label for="fbOneSentenceQuote" class="question-label">
+                        Dein Fazit in 1 Satz (z.B. für eine Testimonial-Karte auf meiner Website): *
+                    </label>
+                    <input type="text" id="fbOneSentenceQuote" name="zitat_fazit" class="form-input" placeholder="z.B. 'Dank Julia habe ich endlich gelernt, ohne schlechtes Gewissen Nein zu sagen!'" required>
+                </div>
+
+                <div class="question-group">
+                    <label class="question-label">Wie darf dein Erfahrungsbericht genutzt / veröffentlicht werden? *</label>
+                    <div class="radio-options" style="flex-direction: column; gap: 0.75rem;">
+                        <label class="radio-label">
+                            <input type="radio" name="freigabe_status" value="Öffentlich mit Vorname auf Website & Social Media" required>
+                            🟢 <strong>Öffentlich:</strong> Mit meinem Vornamen (z.B. "Maria S.") auf der Website & Social Media.
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="freigabe_status" value="Anonymisiert auf Website">
+                            🟡 <strong>Anonym:</strong> Darf auf der Website veröffentlicht werden, aber ohne meinen Namen (z.B. "Teilnehmerin aus Paderborn").
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="freigabe_status" value="Nur für Julia persönlich (privat)">
+                            🔒 <strong>Privat:</strong> Nur für Julia persönlich (keine Veröffentlichung).
+                        </label>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Submit Button -->
+            <div style="text-align: center; margin-top: 2rem;">
+                <button type="submit" class="btn btn-primary btn-lg shadow-soft" style="width: 100%; max-width: 450px;">
+                    ✨ Feedback absenden
+                </button>
+                <p style="font-size: 0.85rem; color: var(--text-muted); margin-top: 0.75rem;">
+                    100% Datenschutz & verschlüsselte Übertragung per SSL.
+                </p>
+            </div>
+        </form>
+
+        <!-- Success Screen (Hidden by Default) -->
+        <div id="feedbackSuccess" class="form-section-card text-center" style="display: none; padding: 3.5rem 2rem;">
+            <div style="font-size: 3.5rem; margin-bottom: 1rem;">✨</div>
+            <h2 style="font-size: 2.2rem; color: var(--brand-forest); margin-bottom: 0.75rem;">
+                Vielen Dank, <span id="successName">liebe Kundin</span>!
+            </h2>
+            <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 600px; margin: 0 auto 2rem;">
+                Dein Feedback bedeutet mir unglaublich viel! Danke für dein Vertrauen und deinen Einsatz während unserer gemeinsamen Reise.
+            </p>
+
+            <!-- Summary Box -->
+            <div style="background: var(--bg-light); border: 1px solid var(--border-gold); border-radius: var(--radius-md); padding: 1.5rem; text-align: left; margin-bottom: 2rem;">
+                <h4 style="color: var(--brand-forest); margin-bottom: 0.75rem; display: flex; align-items: center; justify-content: space-between;">
+                    <span>📋 Zusammenfassung deines Feedbacks</span>
+                    <button type="button" id="copyBtn" onclick="copyFeedbackSummary()" class="btn btn-outline" style="padding: 0.4rem 0.8rem; font-size: 0.85rem;">
+                        📋 Kopie in Zwischenablage
+                    </button>
+                </h4>
+                <pre id="summaryDisplay" style="white-space: pre-wrap; font-family: inherit; font-size: 0.95rem; color: var(--text-primary); line-height: 1.5; background: #FFF; padding: 1.25rem; border-radius: var(--radius-sm); border: 1px solid var(--border-light); max-height: 400px; overflow-y: auto;"></pre>
+            </div>
+
+            <a href="index.html" class="btn btn-primary">
+                Zurück zur Startseite
+            </a>
+        </div>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <div class="footer-brand">
+                <div class="logo">
+                    <span class="logo-title">Time <span class="accent-gold">Balance</span></span>
+                </div>
+                <p>Mit Ruhe, Fokus und Leichtigkeit zu deinen größten Erfolgen. Mentoring & Begleitung von Julia Geneberg.</p>
+            </div>
+
+            <div class="footer-links">
+                <h4>Social Media</h4>
+                <ul>
+                    <li><a href="https://www.instagram.com/julia.time.balance/" target="_blank" rel="noopener">Instagram @julia.time.balance</a></li>
+                    <li><a href="https://www.instagram.com/julia_geneberg/?hl=de" target="_blank" rel="noopener">Instagram @julia_geneberg</a></li>
+                    <li><a href="https://www.tiktok.com/@julia_geneberg" target="_blank" rel="noopener">TikTok @julia_geneberg</a></li>
+                    <li><a href="https://t.me/JuliaGeneberg" target="_blank" rel="noopener">Telegram @JuliaGeneberg</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-links">
+                <h4>Rechtliches & Formulare</h4>
+                <ul>
+                    <li><a href="index.html">Impressum & Datenschutz</a></li>
+                    <li><a href="fragebogen.html">Diagnose-Fragebogen</a></li>
+                    <li><a href="feedback.html" style="font-weight: 600; color: var(--accent-gold);">Feedback geben</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="container footer-bottom">
+            <p>&copy; <span id="year"></span> Time Balance Mentoring by Julia Geneberg. Alle Rechte vorbehalten.</p>
+        </div>
+    </footer>
+
+    <!-- JavaScript Logic -->
+    <script>
+        // Set dynamic year in footer
+        document.getElementById('year').textContent = new Date().getFullYear();
+
+        // Toggle text field for 'Sonstiges'
+        function toggleOtherFormat(show) {
+            const wrapper = document.getElementById('otherFormatWrapper');
+            const input = document.getElementById('otherFormatInput');
+            if (wrapper) {
+                wrapper.style.display = show ? 'block' : 'none';
+                if (input && show) {
+                    input.focus();
+                }
+            }
+        }
+
+        function getRadioVal(name) {
+            const el = document.querySelector(`input[name="${name}"]:checked`);
+            return el ? el.value : 'Nicht angegeben';
+        }
+
+        function copyFeedbackSummary() {
+            const text = document.getElementById('summaryDisplay').innerText;
+            navigator.clipboard.writeText(text).then(() => {
+                const btn = document.getElementById('copyBtn');
+                btn.innerText = '✅ Kopiert!';
+                setTimeout(() => { btn.innerText = '📋 Kopie in Zwischenablage'; }, 3000);
+            });
+        }
+
+        function showSuccessScreen(name, summaryText) {
+            const form = document.getElementById('feedbackForm');
+            const successEl = document.getElementById('feedbackSuccess');
+            const successName = document.getElementById('successName');
+            const summaryDisplay = document.getElementById('summaryDisplay');
+            const headerTag = document.querySelector('.form-page-header .section-tag');
+            const headerTitle = document.querySelector('.form-page-header .hero-title');
+            const headerSub = document.querySelector('.form-page-header .hero-subtitle');
+
+            if (headerTag) headerTag.innerText = 'Vielen Dank! ✨';
+            if (headerTitle) headerTitle.innerText = 'Dein Erfahrungsbericht wurde übermittelt!';
+            if (headerSub) headerSub.innerText = 'Ich schätze deine Rückmeldung von ganzem Herzen.';
+
+            if (name && successName) successName.innerText = name;
+            if (summaryDisplay) summaryDisplay.innerText = summaryText;
+
+            if (form) form.style.display = 'none';
+            if (successEl) {
+                successEl.style.display = 'block';
+                setTimeout(() => {
+                    successEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }, 100);
+            }
+        }
+
+        function handleFeedbackSubmit(e) {
+            e.preventDefault();
+
+            const form = document.getElementById('feedbackForm');
+            const name = document.getElementById('fbName').value.trim();
+            const email = document.getElementById('fbEmail').value.trim();
+
+            let format = getRadioVal('absolviertes_format');
+            if (format === 'Sonstiges') {
+                const customFormat = document.getElementById('otherFormatInput').value.trim();
+                format = customFormat ? `Sonstiges: ${customFormat}` : 'Sonstiges Format';
+            }
+
+            const beforeSituation = document.getElementById('fbBeforeSituation').value.trim();
+            const stressBefore = getRadioVal('stress_vorher');
+            const afterResults = document.getElementById('fbAfterResults').value.trim();
+            const biggestWin = document.getElementById('fbBiggestWin').value.trim();
+            
+            const materialsStars = getRadioVal('materialien_sterne');
+            const materialsText = document.getElementById('fbMaterialsText').value.trim() || 'Keine Anmerkungen';
+            const mentoringExperience = document.getElementById('fbMentoringExperience').value.trim();
+            const recommendation = getRadioVal('weiterempfehlung');
+
+            const oneSentenceQuote = document.getElementById('fbOneSentenceQuote').value.trim();
+            const releaseStatus = getRadioVal('freigabe_status');
+
+            const summaryText = `TIME BALANCE ERFAHRUNGSBERICHT & FEEDBACK
+=========================================
+Absender/in: ${name}
+E-Mail: ${email}
+Datum: ${new Date().toLocaleDateString('de-DE')}
+
+👤 1. PROGRAMM & PERSON
+• Name: ${name}
+• E-Mail: ${email}
+• Absolviertes Angebot: ${format}
+
+⚡ 2. AUSGANGSLAGE (VORHER)
+• Situation & Probleme vorher:
+  "${beforeSituation}"
+• Stress- & Druck-Level vorher: ${stressBefore} / 10
+
+✨ 3. TRANSFORMATION (NACHHER)
+• Verändertes Leben & Ergebnisse:
+  "${afterResults}"
+• Allergrößter Gewinn im Alltag:
+  "${biggestWin}"
+
+📚 4. MATERIALIEN & BEGLEITUNG
+• Bewertung Workbook/Materialien: ${materialsStars}
+• Anmerkungen zu Materialien: "${materialsText}"
+• 1:1 Begleitung durch Julia:
+  "${mentoringExperience}"
+• Weiterempfehlung: ${recommendation}
+
+💬 5. FAZIT & FREIGABE
+• Fazit in 1 Satz: "${oneSentenceQuote}"
+• Freigabe-Status: ${releaseStatus}
+=========================================`;
+
+            // Display on success screen
+            showSuccessScreen(name, summaryText);
+
+            // Send via Web3Forms API
+            const formData = new FormData(form);
+            formData.append("Auswertung_Zusammenfassung", summaryText);
+
+            fetch('https://api.web3forms.com/submit', {
+                method: 'POST',
+                body: formData
+            }).then(res => res.json()).then(data => {
+                console.log('Web3Forms result:', data);
+            }).catch(err => {
+                console.error('Web3Forms error:', err);
+            });
+        }
+    </script>
+</body>
+</html>
