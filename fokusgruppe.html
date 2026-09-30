@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kostenlose 4-Wochen Fokusgruppe Time Balance | Julia Geneberg</title>
+    <meta name="description" content="Kostenlose Pilot-Fokusgruppe Time Balance mit Julia Geneberg. 4 Live-Calls, Workbook & Telegram-Community für deine Transformation in Energiemanagement, Klarheit im Kopf, Alltagsordnung und Balance.">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root {
+            --bg-light: #FAF8F5;
+            --bg-card: #FFFFFF;
+            --bg-surface: #F2EDE4;
+            --text-primary: #1E293B;
+            --text-secondary: #576574;
+            --text-muted: #8395A7;
+            --brand-forest: #2A4836;
+            --brand-emerald: #3B7A57;
+            --accent-gold: #C5A059;
+            --accent-gold-light: #E6D5B8;
+            --border-light: rgba(42, 72, 54, 0.1);
+            --border-gold: rgba(197, 160, 89, 0.3);
+            --shadow-soft: 0 10px 30px rgba(42, 72, 54, 0.06);
+            --shadow-hover: 0 20px 40px rgba(42, 72, 54, 0.12);
+            --radius-md: 16px;
+            --radius-lg: 24px;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-primary);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .fg-hero {
+            padding: 7rem 1.5rem 4rem;
+            text-align: center;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .fg-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: rgba(197, 160, 89, 0.15);
+            color: #8C6D2B;
+            border: 1px solid var(--border-gold);
+            padding: 0.5rem 1.25rem;
+            border-radius: 50px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-title {
+            font-family: 'Outfit', sans-serif;
+            font-size: 2.75rem;
+            color: var(--brand-forest);
+            font-weight: 700;
+            line-height: 1.25;
+            margin-bottom: 1rem;
+        }
+
+        .gradient-text {
+            background: linear-gradient(135deg, var(--accent-gold) 0%, var(--brand-forest) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .fg-features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .fg-feature-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-md);
+            padding: 1.75rem;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-soft);
+            text-align: left;
+        }
+
+        .fg-icon {
+            font-size: 2rem;
+            margin-bottom: 0.75rem;
+        }
+
+        .fg-week-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+            margin-bottom: 2rem;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-soft);
+            display: grid;
+            grid-template-columns: 90px 1fr;
+            gap: 1.5rem;
+            align-items: start;
+            position: relative;
+            overflow: hidden;
+            text-align: left;
+        }
+
+        .fg-week-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 6px;
+            height: 100%;
+            background: linear-gradient(180deg, var(--accent-gold) 0%, var(--brand-forest) 100%);
+        }
+
+        .fg-week-badge {
+            background: var(--brand-forest);
+            color: #FFF;
+            border-radius: 14px;
+            padding: 0.85rem;
+            text-align: center;
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+
+        .fg-week-badge span {
+            display: block;
+            font-size: 0.75rem;
+            font-weight: 400;
+            opacity: 0.85;
+            text-transform: uppercase;
+        }
+
+        .fg-form-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            border: 2px solid var(--accent-gold);
+            box-shadow: var(--shadow-hover);
+            max-width: 650px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        .form-group {
+            margin-bottom: 1.25rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.85rem 1.25rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+            font-family: inherit;
+            font-size: 1rem;
+            background: var(--bg-light);
+            box-sizing: border-box;
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 1.1rem;
+            background: var(--brand-forest);
+            color: #FFF;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(42, 72, 54, 0.2);
+        }
+
+        .btn-submit:hover {
+            background: var(--brand-emerald);
+            transform: translateY(-2px);
+        }
+
+        /* Confirmation Modal */
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(6px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #FFF;
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            max-width: 580px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border: 1px solid var(--accent-gold);
+        }
+
+        .telegram-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.75rem;
+            background: #0088cc;
+            color: #FFF;
+            padding: 1rem 2rem;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-top: 1.25rem;
+            text-decoration: none;
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        @media (max-width: 768px) {
+            .fg-week-card {
+                grid-template-columns: 1fr;
+            }
+            .hero-title {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <nav style="padding: 1.25rem 2rem; background: #FFF; border-bottom: 1px solid var(--border-light); position: sticky; top: 0; z-index: 100;">
+        <div style="max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+            <a href="../index.html" style="font-weight: 700; font-size: 1.25rem; color: var(--brand-forest); text-decoration: none;">
+                Time <span style="color: var(--accent-gold);">Balance</span> <span style="font-weight: 300; font-size: 0.9rem; color: var(--text-secondary);">by Julia Geneberg</span>
+            </a>
+            <a href="#anmeldung" style="background: var(--brand-forest); color: #FFF; padding: 0.6rem 1.25rem; border-radius: 50px; text-decoration: none; font-size: 0.9rem; font-weight: 600;">Jetzt Anmelden</a>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="fg-hero">
+        <div class="fg-badge">
+            ✨ Exklusive Pilot-Fokusgruppe • 100% Kostenlos
+        </div>
+        <h1 class="hero-title">
+            In 4 Wochen zu mehr Ruhe, Klarheit <br>
+            <span class="gradient-text">& nachhaltiger Time Balance</span>
+        </h1>
+        <p style="font-size: 1.15rem; color: var(--text-secondary); max-width: 780px; margin: 1.5rem auto 2.5rem;">
+            Erlebe die wichtigsten Impulse aus dem Time Balance System im kostenlosen 1-Monats-Intensivprogramm. 4 wöchentliche Live-Calls, exklusives Arbeits-Workbook und eine motivierende Telegram-Community.
+        </p>
+
+        <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
+            <a href="#anmeldung" style="background: var(--brand-forest); color: #FFF; padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem; box-shadow: var(--shadow-soft);">
+                Kostenlosen Platz sichern →
+            </a>
+            <a href="#bausteine" style="border: 2px solid var(--brand-forest); color: var(--brand-forest); padding: 1rem 2rem; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 1.1rem;">
+                Themen ansehen
+            </a>
+        </div>
+
+        <div class="fg-features-grid">
+            <div class="fg-feature-card">
+                <div class="fg-icon">📞</div>
+                <h3 style="color: var(--brand-forest);">4 Live-Sessions</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.5rem;">
+                    Jede Woche 60 Min. knackiger Input & Übung + 30 Min. vertiefende Q&A und Diskussion.
+                </p>
+            </div>
+            <div class="fg-feature-card">
+                <div class="fg-icon">📘</div>
+                <h3 style="color: var(--brand-forest);">Fokusgruppen-Workbook</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.5rem;">
+                    Kompakte Übungen, Checklisten & Tracker für den direkten Transfer in deinen Alltag.
+                </p>
+            </div>
+            <div class="fg-feature-card">
+                <div class="fg-icon">💬</div>
+                <h3 style="color: var(--brand-forest);">Telegram-Gruppe</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.5rem;">
+                    Tägliche Impulse, Sprachnachrichten, gegenseitige Motivation & wertvoller Austausch.
+                </p>
+            </div>
+            <div class="fg-feature-card">
+                <div class="fg-icon">🎁</div>
+                <h3 style="color: var(--brand-forest);">100% Gratis für dich</h3>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-top: 0.5rem;">
+                    Als Testgruppe unterstützt du mich mit deinem ehrlichen Feedback – du erhältst dafür den vollen Mehrwert frei Haus.
+                </p>
+            </div>
+        </div>
+    </header>
+
+    <!-- Why Free Section -->
+    <section style="background: var(--bg-surface); padding: 4rem 1.5rem; text-align: center;">
+        <div style="max-width: 800px; margin: 0 auto;">
+            <h2 style="font-size: 2rem; color: var(--brand-forest); margin-bottom: 1rem;">Warum ist diese Fokusgruppe kostenlos?</h2>
+            <p style="color: var(--text-secondary); font-size: 1.1rem; line-height: 1.7;">
+                Ich verfeinere mein Time Balance Mentoring fortlaufend. Für diesen exklusiven Durchlauf suche ich motivierte Teilnehmerinnen, die bereit sind, mit mir 4 Wochen lang an ihrer Energie und Alltagsstruktur zu arbeiten und mir am Ende ihr ehrliches Feedback zu geben. Es gibt keine versteckten Kosten!
+            </p>
+        </div>
+    </section>
+
+    <!-- The 4 Modules Section -->
+    <section id="bausteine" style="padding: 5rem 1.5rem; max-width: 900px; margin: 0 auto;">
+        <div style="text-align: center; margin-bottom: 3.5rem;">
+            <span style="color: var(--accent-gold); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem;">Dein 4-Wochen Programm</span>
+            <h2 style="font-size: 2.3rem; color: var(--brand-forest); margin-top: 0.5rem;">Die 4 Bausteine der Fokusgruppe</h2>
+            <p style="color: var(--text-secondary); max-width: 650px; margin: 0.75rem auto 0;">
+                Jede Woche widmen wir uns gezielt einer Schlüsselsäule deines Alltags – kurz, intensiv und absolut praxistauglich.
+            </p>
+        </div>
+
+        <!-- Week 1 -->
+        <div class="fg-week-card">
+            <div class="fg-week-badge">
+                <span>Woche 1</span>
+                ⚡
+            </div>
+            <div>
+                <h3 style="font-size: 1.4rem; color: var(--brand-forest); margin-bottom: 0.25rem;">Baustein 1: Energiemanagement</h3>
+                <p style="font-weight: 600; color: var(--accent-gold); margin-bottom: 0.75rem;">Akkus aufladen & Energielecks schließen</p>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">
+                    Lerne, wo du in deinem Tag unbemerkt Lebensenergie verlierst und wie du mit gezielten Aufladeritualen deine physische und mentale Ausdauer nachhaltig steigerst.
+                </p>
+                <ul style="list-style: none; padding: 0; color: var(--text-primary); font-size: 0.9rem; line-height: 1.8;">
+                    <li>✓ <strong>Input (60 Min):</strong> Der Live Altlasten-Quick-Audit & das 3-Stufen Energie-Menü.</li>
+                    <li>✓ <strong>Diskussion (30 Min):</strong> Deine persönlichen Energielecks im Q&A lösen.</li>
+                    <li>✓ <strong>Workbook-Übung:</strong> Der 7-Tage-Energie-Tracker.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Week 2 -->
+        <div class="fg-week-card">
+            <div class="fg-week-badge">
+                <span>Woche 2</span>
+                💡
+            </div>
+            <div>
+                <h3 style="font-size: 1.4rem; color: var(--brand-forest); margin-bottom: 0.25rem;">Baustein 2: Klarheit im Kopf</h3>
+                <p style="font-weight: 600; color: var(--accent-gold); margin-bottom: 0.75rem;">Mentale Entlastung & Werte-Kompass</p>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">
+                    Schluss mit dem ständigen Gedankenkarussell. Wir ermitteln deine Top 5 Kernwerte und schaffen eine klare Ausrichtung für deine täglichen Entscheidungen.
+                </p>
+                <ul style="list-style: none; padding: 0; color: var(--text-primary); font-size: 0.9rem; line-height: 1.8;">
+                    <li>✓ <strong>Input (60 Min):</strong> Befreiender Brain Dump & Live-Sortierung deiner Kernwerte.</li>
+                    <li>✓ <strong>Diskussion (30 Min):</strong> Nein-Sagen ohne schlechtes Gewissen.</li>
+                    <li>✓ <strong>Workbook-Übung:</strong> Der persönliche Werte-Filter für Prioritäten.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Week 3 -->
+        <div class="fg-week-card">
+            <div class="fg-week-badge">
+                <span>Woche 3</span>
+                🌿
+            </div>
+            <div>
+                <h3 style="font-size: 1.4rem; color: var(--brand-forest); margin-bottom: 0.25rem;">Baustein 3: Ordnung im Alltag</h3>
+                <p style="font-weight: 600; color: var(--accent-gold); margin-bottom: 0.75rem;">Alltagsstruktur & Zeitmanagement ohne Druck</p>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">
+                    Transformiere deine überfüllte To-Do-Liste in ein entspanntes Tages- und Wochen-System, das zu deinem Bio-Rhythmus passt.
+                </p>
+                <ul style="list-style: none; padding: 0; color: var(--text-primary); font-size: 0.9rem; line-height: 1.8;">
+                    <li>✓ <strong>Input (60 Min):</strong> Das GTD-Leichtigkeits-System & E.A.D.V.-Prinzip.</li>
+                    <li>✓ <strong>Diskussion (30 Min):</strong> Praxis-Hacks für Haushalt, Beruf & Familie.</li>
+                    <li>✓ <strong>Workbook-Übung:</strong> Erstellung deines persönlichen Wochen-Templates.</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Week 4 -->
+        <div class="fg-week-card">
+            <div class="fg-week-badge">
+                <span>Woche 4</span>
+                ⚖️
+            </div>
+            <div>
+                <h3 style="font-size: 1.4rem; color: var(--brand-forest); margin-bottom: 0.25rem;">Baustein 4: Balance</h3>
+                <p style="font-weight: 600; color: var(--accent-gold); margin-bottom: 0.75rem;">Nachhaltige Lebensfreude & Routinen</p>
+                <p style="color: var(--text-secondary); font-size: 0.95rem; margin-bottom: 1rem;">
+                    Verankere deine neuen Gewohnheiten dauerhaft, damit du auch in stressigen Phasen in deiner Mitte bleibst.
+                </p>
+                <ul style="list-style: none; padding: 0; color: var(--text-primary); font-size: 0.9rem; line-height: 1.8;">
+                    <li>✓ <strong>Input (60 Min):</strong> Die Balance-Formel & Lebensfreude-Routinen.</li>
+                    <li>✓ <strong>Diskussion (30 Min):</strong> Große Vorher-Nachher Reflexion & Ausblick.</li>
+                    <li>✓ <strong>Workbook-Übung:</strong> Deine 90-Tage Nachhaltigkeits-Charter.</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Section -->
+    <section id="anmeldung" style="padding: 5rem 1.5rem; background: var(--bg-surface);">
+        <div style="max-width: 650px; margin: 0 auto; text-align: center;">
+            <span style="color: var(--accent-gold); font-weight: 700; letter-spacing: 1px; text-transform: uppercase; font-size: 0.9rem;">Sichere dir deinen Platz</span>
+            <h2 style="font-size: 2.3rem; color: var(--brand-forest); margin: 0.5rem 0 1rem;">Jetzt kostenlos anmelden</h2>
+            <p style="color: var(--text-secondary); margin-bottom: 2rem;">
+                Die Plätze sind begrenzt, um eine vertrauliche & intensive Atmosphäre in den Calls zu gewährleisten.
+            </p>
+
+            <div class="fg-form-card">
+                <form id="fokusForm" onsubmit="handleFormSubmit(event)">
+                    <div class="form-group">
+                        <label for="fg-name">Dein Vorname *</label>
+                        <input type="text" id="fg-name" class="form-control" placeholder="z.B. Sarah" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fg-email">Deine E-Mail-Adresse *</label>
+                        <input type="email" id="fg-email" class="form-control" placeholder="name@beispiel.de" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fg-instagram">Dein Instagram-Name (optional)</label>
+                        <input type="text" id="fg-instagram" class="form-control" placeholder="@dein.name">
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fg-motivation">Was wünschst du dir für die 4 Wochen?</label>
+                        <textarea id="fg-motivation" class="form-control" rows="3" placeholder="z.B. Endlich wieder mehr Energie abends haben..."></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        ✨ Jetzt kostenlos Platz reservieren
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modal Popup -->
+    <div class="modal-overlay" id="confirmationModal">
+        <div class="modal-content">
+            <div style="font-size: 3rem; margin-bottom: 0.5rem;">🎉</div>
+            <h3 style="font-size: 1.8rem; color: var(--brand-forest); margin-bottom: 0.75rem;">Du bist offiziell dabei!</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Deine Anmeldung zur <strong>Fokusgruppe Time Balance</strong> war erfolgreich.
+            </p>
+            
+            <div style="background: var(--bg-surface); padding: 1.25rem; border-radius: var(--radius-md); text-align: left; margin-bottom: 1.5rem;">
+                <p style="font-weight: 700; color: var(--brand-forest); margin-bottom: 0.5rem;">Nächste 2 wichtige Schritte:</p>
+                <ol style="margin-left: 1.25rem; color: var(--text-primary); font-size: 0.95rem; line-height: 1.7;">
+                    <li><strong>Telegram-Gruppe beitreten:</strong> Hier erhältst du alle Zoom-Links & tägliche Impulse.</li>
+                    <li><strong>Start-Fragebogen ausfüllen:</strong> Teile deinen aktuellen Standpunkt A mit mir.</li>
+                </ol>
+            </div>
+
+            <a href="https://t.me/+6bI3BlAa325hYzZi" target="_blank" class="telegram-btn">
+                📱 Jetzt der Telegram-Gruppe beitreten
+            </a>
+
+            <div style="margin-top: 1rem;">
+                <a href="fokusgruppe-start.html" style="color: var(--brand-forest); font-weight: 600; text-decoration: underline; font-size: 0.95rem;">
+                    📋 Zum Start-Fragebogen (2 Min.)
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <footer style="background: var(--brand-forest); color: #FFF; padding: 3rem 1.5rem; text-align: center; margin-top: 4rem;">
+        <p style="font-weight: 700; font-size: 1.1rem; margin-bottom: 0.5rem;">Time Balance Mentoring</p>
+        <p style="opacity: 0.8; font-size: 0.9rem;">by Julia Geneberg • Mit innerer Ruhe und Leichtigkeit zum Erfolg</p>
+    </footer>
+
+    <script>
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            document.getElementById('confirmationModal').classList.add('active');
+        }
+    </script>
+</body>
+</html>

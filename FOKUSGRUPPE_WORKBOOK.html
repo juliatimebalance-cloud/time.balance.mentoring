@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fokusgruppen-Workbook Time Balance | Julia Geneberg</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        @media print {
+            .no-print { display: none !important; }
+            body { background: #FFF !important; color: #000 !important; }
+            .wb-page { page-break-after: always; box-shadow: none !important; border: none !important; padding: 0 !important; }
+        }
+        
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-primary);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            padding: 2rem 1rem;
+        }
+
+        .wb-container {
+            max-width: 850px;
+            margin: 0 auto;
+        }
+
+        .wb-card {
+            background: #FFF;
+            border-radius: 16px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .wb-header {
+            text-align: center;
+            border-bottom: 2px solid var(--bg-surface);
+            padding-bottom: 2rem;
+            margin-bottom: 2rem;
+        }
+
+        .wb-title {
+            font-size: 2.2rem;
+            color: var(--brand-forest);
+            font-family: 'Outfit', sans-serif;
+        }
+
+        .wb-subtitle {
+            color: var(--accent-gold);
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-top: 0.5rem;
+        }
+
+        .section-badge {
+            display: inline-block;
+            background: var(--brand-forest);
+            color: #FFF;
+            padding: 0.4rem 1rem;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            margin-bottom: 1rem;
+        }
+
+        .input-box {
+            width: 100%;
+            min-height: 80px;
+            border: 1px dashed var(--accent-gold);
+            border-radius: 8px;
+            background: var(--bg-light);
+            padding: 1rem;
+            margin-top: 0.5rem;
+            box-sizing: border-box;
+        }
+
+        .tracker-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 1rem;
+        }
+
+        .tracker-table th, .tracker-table td {
+            border: 1px solid var(--border-light);
+            padding: 0.75rem;
+            text-align: left;
+            font-size: 0.9rem;
+        }
+
+        .tracker-table th {
+            background: var(--bg-surface);
+            color: var(--brand-forest);
+        }
+
+        .btn-print {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background: var(--brand-forest);
+            color: #FFF;
+            padding: 1rem 1.75rem;
+            border-radius: 50px;
+            border: none;
+            font-weight: 600;
+            cursor: pointer;
+            box-shadow: var(--shadow-hover);
+            z-index: 1000;
+        }
+    </style>
+</head>
+<body>
+
+    <button onclick="window.print()" class="btn-print no-print">🖨️ Workbook Drucken / Als PDF speichern</button>
+
+    <div class="wb-container">
+        
+        <!-- COVER / INTRO -->
+        <div class="wb-card wb-header">
+            <span style="color: var(--accent-gold); font-weight: 700; letter-spacing: 1px; text-transform: uppercase;">Time Balance Mentoring</span>
+            <h1 class="wb-title">Fokusgruppen-Workbook</h1>
+            <p class="wb-subtitle">4 Wochen für mehr Ruhe, Klarheit & Lebensfreude</p>
+            <p style="color: var(--text-secondary); margin-top: 1rem; font-size: 0.95rem;">
+                Erstellerin: <strong>Julia Geneberg</strong> • Mentorin & Begleiterin
+            </p>
+        </div>
+
+        <!-- WEEK 1 -->
+        <div class="wb-card">
+            <span class="section-badge">Woche 1 • Baustein 1</span>
+            <h2 style="color: var(--brand-forest); font-size: 1.8rem; margin-bottom: 1rem;">⚡ Energiemanagement</h2>
+            <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                "Zeit kann man nicht vermehren – aber die Energie, mit der du deine Zeit erlebst!"
+            </p>
+
+            <h3 style="font-size: 1.2rem; color: var(--brand-forest); margin-bottom: 0.5rem;">Übung 1.1: Meine 2 größten Energielecks</h3>
+            <p style="font-size: 0.95rem; color: var(--text-secondary);">Wo verlierst du im Alltag am meisten Energie?</p>
+            <div class="input-box" contenteditable="true" placeholder="1. ...&#10;2. ...">1. __________________________________________________<br>2. __________________________________________________</div>
+
+            <h3 style="font-size: 1.2rem; color: var(--brand-forest); margin-top: 2rem; margin-bottom: 0.5rem;">Übung 1.2: Das 3-Stufen Kraftquellen-Menü</h3>
+            
+            <div style="margin-top: 1rem;">
+                <p><strong>🍵 Vorspeise (5-Minuten Quick-Charge):</strong></p>
+                <div class="input-box" contenteditable="true">z.B. 1 Glas kaltes Wasser, tief durchatmen am Fenster...</div>
+            </div>
+
+            <div style="margin-top: 1rem;">
+                <p><strong>🥗 Hauptgang (15-Minuten Deep-Reset):</strong></p>
+                <div class="input-box" contenteditable="true">z.B. Power-Nap, Spaziergang um den Block...</div>
+            </div>
+
+            <div style="margin-top: 1rem;">
+                <p><strong>🍨 Dessert (30-Minuten Voll-Aufladung):</strong></p>
+                <div class="input-box" contenteditable="true">z.B. Entspannungsbad, Meditation, Buch lesen...</div>
+            </div>
+
+            <h3 style="font-size: 1.2rem; color: var(--brand-forest); margin-top: 2rem; margin-bottom: 0.5rem;">📊 7-Tage Energie-Tracker</h3>
+            <table class="tracker-table">
+                <thead>
+                    <tr>
+                        <th>Tag</th>
+                        <th>Energie (1-10)</th>
+                        <th>Meine Kraftquelle heute</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>Montag</td><td>/10</td><td></td></tr>
+                    <tr><td>Dienstag</td><td>/10</td><td></td></tr>
+                    <tr><td>Mittwoch</td><td>/10</td><td></td></tr>
+                    <tr><td>Donnerstag</td><td>/10</td><td></td></tr>
+                    <tr><td>Freitag</td><td>/10</td><td></td></tr>
+                    <tr><td>Samstag</td><td>/10</td><td></td></tr>
+                    <tr><td>Sonntag</td><td>/10</td><td></td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- WEEK 2 -->
+        <div class="wb-card">
+            <span class="section-badge" style="background: var(--accent-gold);">Woche 2 • Baustein 2</span>
+            <h2 style="color: var(--brand-forest); font-size: 1.8rem; margin-bottom: 1rem;">💡 Klarheit im Kopf</h2>
+            <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                "Klarheit entsteht nicht durch Nachdenken, sondern durch Ausmisten im Kopf."
+            </p>
+
+            <h3 style="font-size: 1.2rem; color: var(--brand-forest); margin-bottom: 0.5rem;">Übung 2.1: Der befreiende Brain Dump</h3>
+            <p style="font-size: 0.95rem; color: var(--text-secondary);">Schreibe alles auf, was dir durch den Kopf geht:</p>
+            <div class="input-box" style="min-height: 120px;" contenteditable="true"></div>
+
+            <h3 style="font-size: 1.2rem; color: var(--brand-forest); margin-top: 2rem; margin-bottom: 0.5rem;">Übung 2.2: Meine Top 5 Kernwerte</h3>
+            <p style="font-size: 0.95rem; color: var(--text-secondary);">Freiheit, Ruhe, Leichtigkeit, Familie, Gesundheit, Erfolg, Ordnung...</p>
+            <div class="input-box" contenteditable="true">1. ______________________<br>2. ______________________<br>3. ______________________<br>4. ______________________<br>5. ______________________</div>
+        </div>
+
+        <!-- WEEK 3 -->
+        <div class="wb-card">
+            <span class="section-badge">Woche 3 • Baustein 3</span>
+            <h2 style="color: var(--brand-forest); font-size: 1.8rem; margin-bottom: 1rem;">🌿 Ordnung im Alltag</h2>
+            <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                "Nicht die Zeit fehlt uns, sondern der Fokus auf das Wesentliche."
+            </p>
+
+            <h3 style="font-size: 1.2rem; color: var(--brand-forest); margin-bottom: 0.5rem;">Übung 3.1: Die 3-Listen-Methode (Liste A)</h3>
+            <p style="font-size: 0.95rem; color: var(--text-secondary);">Welche maximal 3 Aufgaben haben heute wirklich Priorität?</p>
+            <div class="input-box" contenteditable="true">1. [ ] ____________________________________________<br>2. [ ] ____________________________________________<br>3. [ ] ____________________________________________</div>
+
+            <h3 style="font-size: 1.2rem; color: var(--brand-forest); margin-top: 2rem; margin-bottom: 0.5rem;">Übung 3.2: Meine Bio-Peak Phase</h3>
+            <div class="input-box" contenteditable="true">Meine beste Fokuszeit am Tag ist von ____ Uhr bis ____ Uhr.<br>Hier erledige ich in Ruhe meine wichtigste Aufgabe!</div>
+        </div>
+
+        <!-- WEEK 4 -->
+        <div class="wb-card">
+            <span class="section-badge" style="background: var(--accent-gold);">Woche 4 • Baustein 4</span>
+            <h2 style="color: var(--brand-forest); font-size: 1.8rem; margin-bottom: 1rem;">⚖️ Balance</h2>
+            <p style="font-style: italic; color: var(--text-secondary); margin-bottom: 1.5rem;">
+                "Balance ist kein starrer Zustand, sondern ein dynamisches Gleichgewicht."
+            </p>
+
+            <h3 style="font-size: 1.2rem; color: var(--brand-forest); margin-bottom: 0.5rem;">Übung 4.1: Meine 90-Tage Nachhaltigkeits-Charter</h3>
+            <div class="input-box" style="min-height: 120px;" contenteditable="true">
+                1. Meine Energie-Regel: ___________________________________<br>
+                2. Meine Mentale-Klarheits-Regel: ___________________________<br>
+                3. Meine Lebensfreude-Regel: _______________________________
+            </div>
+        </div>
+
+    </div>
+
+</body>
+</html>

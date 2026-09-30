@@ -1,0 +1,295 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start-Fragebogen | Fokusgruppe Time Balance</title>
+    <link rel="stylesheet" href="../style.css">
+    <style>
+        :root {
+            --bg-light: #FAF8F5;
+            --bg-card: #FFFFFF;
+            --bg-surface: #F2EDE4;
+            --text-primary: #1E293B;
+            --text-secondary: #576574;
+            --brand-forest: #2A4836;
+            --brand-emerald: #3B7A57;
+            --accent-gold: #C5A059;
+            --border-light: rgba(42, 72, 54, 0.1);
+            --shadow-soft: 0 10px 30px rgba(42, 72, 54, 0.06);
+            --radius-md: 16px;
+            --radius-lg: 24px;
+        }
+
+        body {
+            background-color: var(--bg-light);
+            color: var(--text-primary);
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+        }
+
+        .form-container {
+            max-width: 750px;
+            margin: 3rem auto 5rem;
+            padding: 0 1.5rem;
+        }
+
+        .form-card {
+            background: var(--bg-card);
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            border: 1px solid var(--border-light);
+            box-shadow: var(--shadow-soft);
+            margin-bottom: 2rem;
+        }
+
+        .form-section-title {
+            font-size: 1.4rem;
+            color: var(--brand-forest);
+            margin-bottom: 1.25rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--bg-surface);
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .question-group {
+            margin-bottom: 1.5rem;
+        }
+
+        .question-group label {
+            display: block;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            color: var(--text-primary);
+        }
+
+        .form-control {
+            width: 100%;
+            padding: 0.85rem 1.25rem;
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+            font-family: inherit;
+            font-size: 1rem;
+            background: var(--bg-light);
+            box-sizing: border-box;
+        }
+
+        .radio-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+            margin-top: 0.5rem;
+        }
+
+        .radio-label {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 0.75rem 1rem;
+            background: var(--bg-light);
+            border-radius: 8px;
+            border: 1px solid var(--border-light);
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .radio-label:hover {
+            border-color: var(--accent-gold);
+            background: #FFF;
+        }
+
+        .radio-label input {
+            accent-color: var(--brand-forest);
+            width: 18px;
+            height: 18px;
+        }
+
+        .btn-submit {
+            display: block;
+            width: 100%;
+            padding: 1.1rem;
+            background: var(--brand-forest);
+            color: #FFF;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 20px rgba(42, 72, 54, 0.2);
+        }
+
+        .btn-submit:hover {
+            background: var(--brand-emerald);
+            transform: translateY(-2px);
+        }
+
+        .modal-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(15, 23, 42, 0.75);
+            backdrop-filter: blur(6px);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+            padding: 1.5rem;
+        }
+
+        .modal-overlay.active {
+            display: flex;
+        }
+
+        .modal-content {
+            background: #FFF;
+            border-radius: var(--radius-lg);
+            padding: 2.5rem;
+            max-width: 550px;
+            width: 100%;
+            text-align: center;
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+            border: 1px solid var(--accent-gold);
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Navigation -->
+    <nav style="padding: 1.25rem 2rem; background: #FFF; border-bottom: 1px solid var(--border-light);">
+        <div style="max-width: 1100px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center;">
+            <a href="fokusgruppe.html" style="font-weight: 700; font-size: 1.25rem; color: var(--brand-forest); text-decoration: none;">
+                Time <span style="color: var(--accent-gold);">Balance</span> | Fokusgruppe
+            </a>
+            <a href="fokusgruppe.html" style="color: var(--text-secondary); text-decoration: none; font-size: 0.9rem;">← Zurück zur Übersicht</a>
+        </div>
+    </nav>
+
+    <div class="form-container">
+        <div style="text-align: center; margin-bottom: 2.5rem;">
+            <span style="color: var(--accent-gold); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; font-size: 0.85rem;">Schritt 1 von 2</span>
+            <h1 style="font-size: 2.2rem; color: var(--brand-forest); margin-top: 0.3rem;">Dein Startpunkt-Fragebogen</h1>
+            <p style="color: var(--text-secondary); max-width: 600px; margin: 0.5rem auto 0;">
+                Wo stehst du aktuell und wo möchtest du nach den 4 Wochen stehen? Nimm dir 3 Minuten Zeit – so passen wir die Fokusgruppe optimal an deine Bedürfnisse an!
+            </p>
+        </div>
+
+        <form id="startForm" onsubmit="handleStartForm(event)">
+            
+            <!-- Section 1: Kontaktdaten -->
+            <div class="form-card">
+                <h3 class="form-section-title">👤 1. Deine Daten</h3>
+                
+                <div class="question-group">
+                    <label for="start-name">Vor- und Nachname *</label>
+                    <input type="text" id="start-name" class="form-control" placeholder="Vorname Nachname" required>
+                </div>
+
+                <div class="question-group">
+                    <label for="start-email">E-Mail-Adresse *</label>
+                    <input type="email" id="start-email" class="form-control" placeholder="deine@email.de" required>
+                </div>
+            </div>
+
+            <!-- Section 2: Punkt A - Aktueller Standpunkt -->
+            <div class="form-card">
+                <h3 class="form-section-title">📍 2. Punkt A: Wo stehst du heute?</h3>
+
+                <div class="question-group">
+                    <label>Wie bewertest du dein aktuelles Energielevel (1 = völlig erschöpft, 10 = voller Kraft)? *</label>
+                    <select id="start-energie" class="form-control" required>
+                        <option value="">Bitte wählen...</option>
+                        <option value="1-3">1 - 3: Sehr niedrig, oft erschöpft</option>
+                        <option value="4-6">4 - 6: Schwankend, Nachmittagstiefs</option>
+                        <option value="7-8">7 - 8: Gut, aber Ausbaumöglichkeit</option>
+                        <option value="9-10">9 - 10: Voller Energie</option>
+                    </select>
+                </div>
+
+                <div class="question-group">
+                    <label>Welches Thema ist deine aktuell größte Herausforderung im Alltag? *</label>
+                    <div class="radio-options">
+                        <label class="radio-label">
+                            <input type="radio" name="baustelle" value="Energiemanagement" required>
+                            ⚡ Energiemanagement (Dauerhaft müde, Energielecks, fehlende Erholung)
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="baustelle" value="Klarheit im Kopf">
+                            💡 Klarheit im Kopf (Gedankenkarussell, Überforderung, fehlender Fokus)
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="baustelle" value="Ordnung im Alltag">
+                            🌿 Ordnung im Alltag (Zeitnot, Unordnung, To-Do-Listen-Chaos)
+                        </label>
+                        <label class="radio-label">
+                            <input type="radio" name="baustelle" value="Balance">
+                            ⚖️ Balance (Keine Zeit für mich selbst, Dauerstress, schlechtes Gewissen)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="question-group">
+                    <label for="start-situation">Beschreibe deine aktuelle Alltagssituation in 2-3 Sätzen:</label>
+                    <textarea id="start-situation" class="form-control" rows="3" placeholder="z.B. Ich hetze zwischen Beruf und Familie hin und her und vergesse mich selbst dabei..."></textarea>
+                </div>
+            </div>
+
+            <!-- Section 3: Punkt B - Ziele & Gefühl nach 4 Wochen -->
+            <div class="form-card">
+                <h3 class="form-section-title">🎯 3. Punkt B: Wo möchtest du in 4 Wochen stehen?</h3>
+
+                <div class="question-group">
+                    <label for="start-ziel-gefuehl">Wie möchtest du dich nach den 4 Wochen Fokusgruppe genau fühlen? *</label>
+                    <input type="text" id="start-ziel-gefuehl" class="form-control" placeholder="z.B. Gelassen, organisiert, voller Energie und im reinen mit mir selbst" required>
+                </div>
+
+                <div class="question-group">
+                    <label for="start-groesser-erfolg">Was wäre dein allergrößter Erfolg am Ende dieses Monats? *</label>
+                    <textarea id="start-groesser-erfolg" class="form-control" rows="3" placeholder="z.B. Ein festes Abendritual zu haben und abends ohne Grübeln einzuschlafen..." required></textarea>
+                </div>
+
+                <div class="question-group">
+                    <label for="start-fragen">Hast du bereits konkrete Fragen an Julia für den 1. Call?</label>
+                    <textarea id="start-fragen" class="form-control" rows="2" placeholder="Deine Fragen an Julia..."></textarea>
+                </div>
+            </div>
+
+            <button type="submit" class="btn-submit">
+                🚀 Startpunkt-Fragebogen absenden
+            </button>
+        </form>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div class="modal-overlay" id="startModal">
+        <div class="modal-content">
+            <div style="font-size: 3rem; margin-bottom: 0.5rem;">💌</div>
+            <h3 style="font-size: 1.8rem; color: var(--brand-forest); margin-bottom: 0.75rem;">Vielen Dank für deine Angaben!</h3>
+            <p style="color: var(--text-secondary); margin-bottom: 1.5rem;">
+                Ich habe deine Antworten erhalten. Sie helfen mir enorm, die Live-Calls genau auf dich und die Gruppe abzustimmen.
+            </p>
+
+            <a href="https://t.me/+6bI3BlAa325hYzZi" target="_blank" style="display: block; background: #0088cc; color: #FFF; padding: 1rem; border-radius: 50px; text-decoration: none; font-weight: 600; margin-bottom: 1rem;">
+                📱 Falls noch nicht geschehen: Jetzt Telegram-Gruppe beitreten
+            </a>
+
+            <a href="fokusgruppe.html" style="color: var(--text-secondary); font-size: 0.9rem; text-decoration: underline;">
+                Zurück zur Fokusgruppen-Seite
+            </a>
+        </div>
+    </div>
+
+    <script>
+        function handleStartForm(e) {
+            e.preventDefault();
+            document.getElementById('startModal').classList.add('active');
+        }
+    </script>
+</body>
+</html>
