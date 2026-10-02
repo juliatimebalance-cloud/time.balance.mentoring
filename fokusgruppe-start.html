@@ -181,19 +181,23 @@
         </div>
 
         <form id="startForm" onsubmit="handleStartForm(event)">
-            
+            <!-- Web3Forms Integration -->
+            <input type="hidden" name="access_key" value="28f46f2c-7856-4ea6-a1ff-81896bbd7e42">
+            <input type="hidden" name="subject" value="📋 Neuer Startpunkt-Fragebogen (Time Balance Mastermind)">
+            <input type="hidden" name="from_name" value="Mastermind Start-Fragebogen">
+
             <!-- Section 1: Kontaktdaten -->
             <div class="form-card">
                 <h3 class="form-section-title">👤 1. Deine Daten</h3>
                 
                 <div class="question-group">
                     <label for="start-name">Vor- und Nachname *</label>
-                    <input type="text" id="start-name" class="form-control" placeholder="Vorname Nachname" required>
+                    <input type="text" id="start-name" name="Name" class="form-control" placeholder="Vorname Nachname" required>
                 </div>
 
                 <div class="question-group">
                     <label for="start-email">E-Mail-Adresse *</label>
-                    <input type="email" id="start-email" class="form-control" placeholder="deine@email.de" required>
+                    <input type="email" id="start-email" name="email" class="form-control" placeholder="deine@email.de" required>
                 </div>
             </div>
 
@@ -203,7 +207,7 @@
 
                 <div class="question-group">
                     <label>Wie bewertest du dein aktuelles Energielevel (1 = völlig erschöpft, 10 = voller Kraft)? *</label>
-                    <select id="start-energie" class="form-control" required>
+                    <select id="start-energie" name="Aktuelles_Energielevel" class="form-control" required>
                         <option value="">Bitte wählen...</option>
                         <option value="1-3">1 - 3: Sehr niedrig, oft erschöpft</option>
                         <option value="4-6">4 - 6: Schwankend, Nachmittagstiefs</option>
@@ -216,19 +220,19 @@
                     <label>Welches Thema ist deine aktuell größte Herausforderung im Alltag? *</label>
                     <div class="radio-options">
                         <label class="radio-label">
-                            <input type="radio" name="baustelle" value="Energiemanagement" required>
+                            <input type="radio" name="groesste_baustelle" value="Energiemanagement" required>
                             ⚡ Energiemanagement (Dauerhaft müde, Energielecks, fehlende Erholung)
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="baustelle" value="Klarheit im Kopf">
+                            <input type="radio" name="groesste_baustelle" value="Klarheit im Kopf">
                             💡 Klarheit im Kopf (Gedankenkarussell, Überforderung, fehlender Fokus)
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="baustelle" value="Ordnung im Alltag">
+                            <input type="radio" name="groesste_baustelle" value="Ordnung im Alltag">
                             🌿 Ordnung im Alltag (Zeitnot, Unordnung, To-Do-Listen-Chaos)
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="baustelle" value="Balance">
+                            <input type="radio" name="groesste_baustelle" value="Balance">
                             ⚖️ Balance (Keine Zeit für mich selbst, Dauerstress, schlechtes Gewissen)
                         </label>
                     </div>
@@ -236,7 +240,7 @@
 
                 <div class="question-group">
                     <label for="start-situation">Beschreibe deine aktuelle Alltagssituation in 2-3 Sätzen:</label>
-                    <textarea id="start-situation" class="form-control" rows="3" placeholder="z.B. Ich hetze zwischen Beruf und Familie hin und her und vergesse mich selbst dabei..."></textarea>
+                    <textarea id="start-situation" name="Aktuelle_Situation" class="form-control" rows="3" placeholder="z.B. Ich hetze zwischen Beruf und Familie hin und her und vergesse mich selbst dabei..."></textarea>
                 </div>
             </div>
 
@@ -246,17 +250,17 @@
 
                 <div class="question-group">
                     <label for="start-ziel-gefuehl">Wie möchtest du dich nach den 4 Wochen Mastermind genau fühlen? *</label>
-                    <input type="text" id="start-ziel-gefuehl" class="form-control" placeholder="z.B. Gelassen, organisiert, voller Energie und im reinen mit mir selbst" required>
+                    <input type="text" id="start-ziel-gefuehl" name="Wunsch_Gefuehl_Danach" class="form-control" placeholder="z.B. Gelassen, organisiert, voller Energie und im reinen mit mir selbst" required>
                 </div>
 
                 <div class="question-group">
                     <label for="start-groesser-erfolg">Was wäre dein allergrößter Erfolg am Ende dieses Monats? *</label>
-                    <textarea id="start-groesser-erfolg" class="form-control" rows="3" placeholder="z.B. Ein festes Abendritual zu haben und abends ohne Grübeln einzuschlafen..." required></textarea>
+                    <textarea id="start-groesser-erfolg" name="Allergroesster_Erfolg" class="form-control" rows="3" placeholder="z.B. Ein festes Abendritual zu haben und abends ohne Grübeln einzuschlafen..." required></textarea>
                 </div>
 
                 <div class="question-group">
                     <label for="start-fragen">Hast du bereits konkrete Fragen an Julia für den 1. Call?</label>
-                    <textarea id="start-fragen" class="form-control" rows="2" placeholder="Deine Fragen an Julia..."></textarea>
+                    <textarea id="start-fragen" name="Konkrete_Fragen" class="form-control" rows="2" placeholder="Deine Fragen an Julia..."></textarea>
                 </div>
             </div>
 
@@ -275,7 +279,7 @@
                 Ich habe deine Antworten erhalten. Sie helfen mir enorm, die Live-Calls genau auf dich und die Gruppe abzustimmen.
             </p>
 
-            <a href="https://t.me/+6bI3BlAa325hYzZi" target="_blank" style="display: block; background: #0088cc; color: #FFF; padding: 1rem; border-radius: 50px; text-decoration: none; font-weight: 600; margin-bottom: 1rem;">
+            <a href="https://t.me/+jg5cVVKGaFo2NjMy" target="_blank" style="display: block; background: #0088cc; color: #FFF; padding: 1rem; border-radius: 50px; text-decoration: none; font-weight: 600; margin-bottom: 1rem;">
                 📱 Falls noch nicht geschehen: Jetzt Telegram-Gruppe beitreten
             </a>
 
@@ -286,8 +290,26 @@
     </div>
 
     <script>
-        function handleStartForm(e) {
+        async function handleStartForm(e) {
             e.preventDefault();
+            const form = document.getElementById('startForm');
+            const submitBtn = form.querySelector('button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerText = 'Wird gesendet... ⏳';
+            }
+
+            const formData = new FormData(form);
+
+            try {
+                await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+            } catch (err) {
+                console.error('Web3Forms Fehler:', err);
+            }
+
             document.getElementById('startModal').classList.add('active');
         }
     </script>

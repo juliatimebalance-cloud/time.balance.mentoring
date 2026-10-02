@@ -427,24 +427,29 @@
 
             <div class="fg-form-card">
                 <form id="fokusForm" onsubmit="handleFormSubmit(event)">
+                    <!-- Web3Forms Integration für E-Mail-Benachrichtigung an Julia -->
+                    <input type="hidden" name="access_key" value="28f46f2c-7856-4ea6-a1ff-81896bbd7e42">
+                    <input type="hidden" name="subject" value="✨ Neue Anmelderin für Time Balance Pilot-Mastermind!">
+                    <input type="hidden" name="from_name" value="Time Balance Mastermind Formular">
+                    
                     <div class="form-group">
                         <label for="fg-name">Dein Vorname *</label>
-                        <input type="text" id="fg-name" class="form-control" placeholder="z.B. Sarah" required>
+                        <input type="text" id="fg-name" name="Vorname" class="form-control" placeholder="z.B. Sarah" required>
                     </div>
 
                     <div class="form-group">
                         <label for="fg-email">Deine E-Mail-Adresse *</label>
-                        <input type="email" id="fg-email" class="form-control" placeholder="name@beispiel.de" required>
+                        <input type="email" id="fg-email" name="email" class="form-control" placeholder="name@beispiel.de" required>
                     </div>
 
                     <div class="form-group">
                         <label for="fg-instagram">Dein Instagram-Name (optional)</label>
-                        <input type="text" id="fg-instagram" class="form-control" placeholder="@dein.name">
+                        <input type="text" id="fg-instagram" name="Instagram" class="form-control" placeholder="@dein.name">
                     </div>
 
                     <div class="form-group">
                         <label for="fg-motivation">Was wünschst du dir für die 4 Wochen?</label>
-                        <textarea id="fg-motivation" class="form-control" rows="3" placeholder="z.B. Endlich wieder mehr Energie abends haben..."></textarea>
+                        <textarea id="fg-motivation" name="Wunsch_Erwartung" class="form-control" rows="3" placeholder="z.B. Endlich wieder mehr Energie abends haben..."></textarea>
                     </div>
 
                     <button type="submit" class="btn-submit">
@@ -472,7 +477,7 @@
                 </ol>
             </div>
 
-            <a href="https://t.me/+6bI3BlAa325hYzZi" target="_blank" class="telegram-btn">
+            <a href="https://t.me/+jg5cVVKGaFo2NjMy" target="_blank" class="telegram-btn">
                 📱 Jetzt der Telegram-Gruppe beitreten
             </a>
 
@@ -490,8 +495,26 @@
     </footer>
 
     <script>
-        function handleFormSubmit(e) {
+        async function handleFormSubmit(e) {
             e.preventDefault();
+            const form = document.getElementById('fokusForm');
+            const submitBtn = form.querySelector('button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerText = 'Wird gesendet... ⏳';
+            }
+
+            const formData = new FormData(form);
+
+            try {
+                await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+            } catch (err) {
+                console.error('Web3Forms Fehler:', err);
+            }
+
             document.getElementById('confirmationModal').classList.add('active');
         }
     </script>

@@ -175,13 +175,17 @@
         </div>
 
         <form id="feedbackForm" onsubmit="handleFeedbackSubmit(event)">
+            <!-- Web3Forms Integration -->
+            <input type="hidden" name="access_key" value="28f46f2c-7856-4ea6-a1ff-81896bbd7e42">
+            <input type="hidden" name="subject" value="⭐ Neues Feedback zur Time Balance Pilot-Mastermind!">
+            <input type="hidden" name="from_name" value="Mastermind Feedback Formular">
             
             <!-- Section 1: Vorname -->
             <div class="form-card">
                 <h3 class="form-section-title">👤 1. Deine Angaben</h3>
                 <div class="question-group">
                     <label for="fb-name">Dein Vor- und Nachname *</label>
-                    <input type="text" id="fb-name" class="form-control" placeholder="Vorname Nachname" required>
+                    <input type="text" id="fb-name" name="Name" class="form-control" placeholder="Vorname Nachname" required>
                 </div>
             </div>
 
@@ -191,7 +195,7 @@
 
                 <div class="question-group">
                     <label>Wie zufrieden warst du insgesamt mit der Pilot-Mastermind (1 = gar nicht, 10 = begeistert)? *</label>
-                    <select id="fb-note" class="form-control" required>
+                    <select id="fb-note" name="Gesamtnote" class="form-control" required>
                         <option value="">Bitte wählen...</option>
                         <option value="10">⭐⭐⭐⭐⭐ 10 / 10 - Absolut begeistert!</option>
                         <option value="9">⭐⭐⭐⭐⭐ 9 / 10 - Sehr gut</option>
@@ -205,19 +209,19 @@
                     <label>Welcher Baustein / Call hat dir persönlich am meisten gebracht? *</label>
                     <div class="radio-options">
                         <label class="radio-label">
-                            <input type="radio" name="fav-baustein" value="Woche 1: Energiemanagement" required>
+                            <input type="radio" name="Lieblingsbaustein" value="Woche 1: Energiemanagement" required>
                             ⚡ Woche 1: Energiemanagement (Akkus aufladen & Energielecks)
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="fav-baustein" value="Woche 2: Klarheit im Kopf">
+                            <input type="radio" name="Lieblingsbaustein" value="Woche 2: Klarheit im Kopf">
                             💡 Woche 2: Klarheit im Kopf (Werte-Kompass & Mentale Entlastung)
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="fav-baustein" value="Woche 3: Ordnung im Alltag">
+                            <input type="radio" name="Lieblingsbaustein" value="Woche 3: Ordnung im Alltag">
                             🌿 Woche 3: Ordnung im Alltag (Zeitmanagement & Tagesstruktur)
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="fav-baustein" value="Woche 4: Balance">
+                            <input type="radio" name="Lieblingsbaustein" value="Woche 4: Balance">
                             ⚖️ Woche 4: Balance (Lebensfreude-Routinen & Nachhaltigkeit)
                         </label>
                     </div>
@@ -225,7 +229,7 @@
 
                 <div class="question-group">
                     <label for="fb-aha">Was war dein größter Aha-Moment oder deine wertvollste Erkenntnis? *</label>
-                    <textarea id="fb-aha" class="form-control" rows="3" placeholder="Mein größter Aha-Moment war..." required></textarea>
+                    <textarea id="fb-aha" name="Groesster_Aha_Moment" class="form-control" rows="3" placeholder="Mein größter Aha-Moment war..." required></textarea>
                 </div>
             </div>
 
@@ -235,17 +239,17 @@
 
                 <div class="question-group">
                     <label for="fb-workbook">Wie hat dir das Mastermind-Workbook gefallen? *</label>
-                    <textarea id="fb-workbook" class="form-control" rows="2" placeholder="Sehr übersichtlich, tolle Übungen..." required></textarea>
+                    <textarea id="fb-workbook" name="Workbook_Bewertung" class="form-control" rows="2" placeholder="Sehr übersichtlich, tolle Übungen..." required></textarea>
                 </div>
 
                 <div class="question-group">
                     <label for="fb-telegram">Wie empfandest du die Begleitung in der Telegram-Gruppe?</label>
-                    <textarea id="fb-telegram" class="form-control" rows="2" placeholder="Tägliche Impulse waren super hilfreich..."></textarea>
+                    <textarea id="fb-telegram" name="Telegram_Gruppe_Bewertung" class="form-control" rows="2" placeholder="Tägliche Impulse waren super hilfreich..."></textarea>
                 </div>
 
                 <div class="question-group">
                     <label for="fb-verbesserung">Was sollte Julia in Zukunft noch verbessern oder anders machen?</label>
-                    <textarea id="fb-verbesserung" class="form-control" rows="3" placeholder="Dein ehrlicher Tipp für Julia..."></textarea>
+                    <textarea id="fb-verbesserung" name="Verbesserungsvorschlaege" class="form-control" rows="3" placeholder="Dein ehrlicher Tipp für Julia..."></textarea>
                 </div>
             </div>
 
@@ -255,22 +259,22 @@
 
                 <div class="question-group">
                     <label for="fb-testimonial">Möchtest du ein kurzes Feedback/Zitat abgeben, das Julia auf ihrer Website nutzen darf?</label>
-                    <textarea id="fb-testimonial" class="form-control" rows="3" placeholder="z.B. 'Die 4 Wochen Mastermind haben mir geholfen, wieder klarer zu denken und gelassener durch den Tag zu gehen...'"></textarea>
+                    <textarea id="fb-testimonial" name="Testimonial_Zitat" class="form-control" rows="3" placeholder="z.B. 'Die 4 Wochen Mastermind haben mir geholfen, wieder klarer zu denken und gelassener durch den Tag zu gehen...'"></textarea>
                 </div>
 
                 <div class="question-group">
                     <label>Hast du Interesse an einer weiterführenden Begleitung (12-Wochen Mentoring oder 1:1 Coaching)?</label>
                     <div class="radio-options">
                         <label class="radio-label">
-                            <input type="radio" name="mentoring-interesse" value="Ja, bitte Infos senden">
+                            <input type="radio" name="Mentoring_Interesse" value="Ja, bitte Infos senden">
                             ✨ Ja, ich möchte gerne unverbindliche Infos zum Mentoring erhalten.
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="mentoring-interesse" value="Vielleicht später">
+                            <input type="radio" name="Mentoring_Interesse" value="Vielleicht später">
                             🤔 Vielleicht später, schick mir gerne die Übersicht.
                         </label>
                         <label class="radio-label">
-                            <input type="radio" name="mentoring-interesse" value="Aktuell nicht">
+                            <input type="radio" name="Mentoring_Interesse" value="Aktuell nicht">
                             Nein, aktuell nicht.
                         </label>
                     </div>
@@ -299,8 +303,26 @@
     </div>
 
     <script>
-        function handleFeedbackSubmit(e) {
+        async function handleFeedbackSubmit(e) {
             e.preventDefault();
+            const form = document.getElementById('feedbackForm');
+            const submitBtn = form.querySelector('button[type="submit"]');
+            if (submitBtn) {
+                submitBtn.disabled = true;
+                submitBtn.innerText = 'Wird gesendet... ⏳';
+            }
+
+            const formData = new FormData(form);
+
+            try {
+                await fetch('https://api.web3forms.com/submit', {
+                    method: 'POST',
+                    body: formData
+                });
+            } catch (err) {
+                console.error('Web3Forms Fehler:', err);
+            }
+
             document.getElementById('fbModal').classList.add('active');
         }
     </script>
